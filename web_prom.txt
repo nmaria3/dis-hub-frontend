@@ -1,0 +1,227 @@
+Using React with NextJs, html and tailwind;
+Create a landing page
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+We shall also use icons from font awesome (This is already installed)
+
+Read all instructions before designing
+
+Create a header with the following
+on the left;
+[graduation-cap-icon] "Dis-Hub" with its primary color.
+On the right;
+- Nav Links [Browse, About, Login, Primary Achor tag called Register]
+On hover all links will share a primary color. The Primary Anchor tag on hover, will become inverted.
+
+Create a hamburger menu for smaller screens.
+
+_________________________________________________________________________________________________________
+
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+We shall also use icons from font awesome (This is already installed)
+These colors must be manually set.
+
+Create a Hero Section:
+2 divs aligned horizontally
+On the Left:
+- h1 with text "Unlocking Global [Academic Exellcence With primary color.]"
+- paragraph with text "Search and access thousands of peer-reviewed dissertations and research papers from Uganda Martyrs University."
+
+On the right:
+An image container with an image "https://i.pinimg.com/736x/76/3f/7f/763f7f24a578fc1d7b1f04bbe3473555.jpg" Ensure the image is not too big but also responsive.
+
+_________________________________________________________________________________________________________
+
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+We shall also use icons from font awesome (This is already installed)
+These colors must be manually set.
+
+Create a section called Featured:
+- h2  with text "Featured dissertations"
+- paragraph with text "Curated high-impact research from the last month"
+
+Generate 3 cards;
+-> Card Structure 
+primary inverted span with {course}
+h3 with {heading}
+paragraph with {paragraph}
+(Small Text) Posted On: {date}
+2 div aligned horizontally;
+On the left will be a circular profile {image} that is small.
+On the right will be bold text {name} and bottom will also have text {campus}
+
+Give the cards a shadow effect to make them look cool.
+
+Use the object below to fill in the information for each card.
+
+[
+    {
+        "course": "COMPUTER SCIENCE",
+        "heading" : "Scalable Neural Architectures for Edge Computing Devices",
+        "paragraph" : "This research explores the effiency of light-weight neural networks in low-power...",
+        "date": "03/10/2023",
+        "ïmage" : "https://i.pinimg.com/1200x/0b/2e/98/0b2e988dcec7af0209aa42d919c6967b.jpg",
+        "name": "Dr. Nankinga Maria",
+        "campus": "Nkozi"
+    },
+    {
+        "course": "AGRICULTURE",
+        "heading" : "The Importance of Irrigation in Modern Agriculture",
+        "paragraph" : "Irrigation is the practice of supplying water to crops when there to crops when there is no enough rain. It helps pl...",
+        "date": "08/12/2025",
+        "ïmage" : "https://i.pinimg.com/736x/6b/c3/ff/6bc3ff27cfac1303e584089abf391605.jpg",
+        "name": "Kiboja Peter",
+        "campus": "Lubaga"
+    },
+    {
+        "course": "SOCIOLOGY",
+        "heading" : "The Digital Divide in Post-Pandemic Urban Education",
+        "paragraph" : "Analyzing the economic barriers to remote learning accesssibility in metropolitan districts...",
+        "date": "21/11/2024",
+        "ïmage" : "https://i.pinimg.com/736x/6e/1c/c4/6e1cc4cc72a5cef35be0eda605c8e46b.jpg",
+        "name": "Magezi Mary Jane",
+        "campus": "Masaka"
+    }
+]
+
+_________________________________________________________________________________________________________
+
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+We shall also use icons from font awesome (This is already installed)
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a how-it-works section
+h2 with text "How it Works"
+paragraph with text "Simple steps to access global research for your academic journey."
+This section will conatain 3 transparent cards aligned horizontally:
+Card Template Structure:
+1. large {font-awesome-icon} with primary color
+2. H3 with {heading}
+3. paragraph with text {paragraph}
+
+Object for filling it the data
+[
+    {
+        "font-awesome-icon" : "magnifying glass",
+        "heading" : "1. Search",
+        "paragraph" : "Use our powerful filters to find dissertations by topic, author or campus.",
+    },
+    {
+        "font-awesome-icon" : "file-arrow-down",
+        "heading" : "2. Download",
+        "paragraph" : "Access the full PDF of the research paper instantly upon authentication",
+    },
+    {
+        "font-awesome-icon" : ["quote-left", "quote-right"],
+        "heading" : "3. Cite",
+        "paragraph" : "Get per-formatted citations for your own work in APA, MLA or even Harvard Style",
+    }
+]
+
+_________________________________________________________________________________________________________
+
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+We shall also use icons from font awesome (This is already installed)
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a stats section
+Set the background with a primary color and the text with a secondary color
+Will contain 3 transparent cards:
+Card tempalte Structure:
+Big h2 with text {h2-text}
+small paragraph/span with text {text}
+
+Data to be filled below
+[
+    {
+        "h2-text": "100+",
+        "text": 'DISSERTATIONS'
+
+    },
+    {
+        "h2-text": "5",
+        "text": 'CAMPUSES'
+
+    },
+    {
+        "h2-text": "1K+",
+        "text": 'DOWNLOADS'
+
+    },
+]
+
+_________________________________________________________________________________________________________
+
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+We shall also use icons from font awesome (This is already installed)
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a testimonials section:
+h2 with text "What Our Researchers Say About Us"
+Create 3 cards aligned horizontally.
+Card template Structure:
+4 or 5 stars font-awesome-star with primary color
+paragraph with {text} (The text will be in quotes and italics)
+
+2 div aligned horizontally;
+On the left will be a circular profile {image} that is small.
+On the right will be bold text {name} and bottom will also have text {course}
+
+Give the cards a shadow effect to make them look cool.
+
+information to fill in the template
+[
+    {
+        'text' : 'Finding past dissertations used to take weeks in the library. This platform helped me access relevant research within minutes. It saved me so much time during my final year project',
+        'image' : 'https://i.pinimg.com/1200x/8c/73/cb/8c73cbf28dfb4375e8839253d04890d8.jpg',
+        'name' : 'Sarah K',
+        'course' : 'Computer Science student'
+    },
+    {
+        'text' : 'This platform is a valuable resource for any UMU studnet. I was able to download several dissertations that guided me while writing my own research paper.',
+        'image' : 'https://i.pinimg.com/736x/39/f4/50/39f450d3c00bab2a0b6480de07f79256.jpg',
+        'name' : 'Peter Kiwanuka',
+        'course' : 'BAM student'
+    },
+    {
+        'text' : 'The search system is very easy to use and the collection of dissertations is impressive. It helped me understand how previous students structured their research work.',
+        'image' : 'https://i.pinimg.com/736x/f6/0b/00/f60b00e3107bab7c1455927adf633dfe.jpg',
+        'name' : 'Linda Nambi',
+        'course' : 'Infomation Tech. student'
+    }
+]
