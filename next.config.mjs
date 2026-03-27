@@ -2,7 +2,13 @@
 const nextConfig = {
   /* config options here */
   images: {
-    domains: ["i.pinimg.com"]
+        remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+        pathname: "/**",
+      },
+    ],
   }
 };
 

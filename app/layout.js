@@ -3,6 +3,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Header from "./components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "./components/Footer";
 
 config.autoAddCss = false
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <ClerkProvider>
           <Header />
           {children}
+          <Footer />
         </ClerkProvider>
       </body>
     </html>
