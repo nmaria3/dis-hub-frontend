@@ -56,17 +56,17 @@ export default function Header() {
 
           {/* ❌ NOT SIGNED IN */}
           <Show when="signed-out">
-            <SignInButton>
-              <button className="hover:text-[#3772FF] transition">
+            
+              <button onClick={() => router.push("/auth/sign-in")} className="hover:text-[#3772FF] transition">
                 Login
               </button>
-            </SignInButton>
+            
 
-            <SignUpButton>
-              <button className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md transition hover:bg-white hover:text-[#3772FF]">
+            
+              <button onClick={() => router.push("/auth/sign-up")} className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md transition hover:bg-white hover:text-[#3772FF]">
                 Register
               </button>
-            </SignUpButton>
+            
           </Show>
 
           {/* ✅ SIGNED IN */}
@@ -112,17 +112,17 @@ export default function Header() {
 
           {/* ❌ NOT SIGNED IN */}
           <Show when="signed-out">
-            <SignInButton>
-              <button className="text-left hover:text-[#3772FF]">
+            
+              <button onClick={() => router.push("/auth/sign-in")} className="text-left hover:text-[#3772FF]">
                 Login
               </button>
-            </SignInButton>
+            
 
-            <SignUpButton>
-              <button className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md text-left hover:bg-white hover:text-[#3772FF] transition">
+            
+              <button onClick={() => router.push("/auth/sign-up")} className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md text-left hover:bg-white hover:text-[#3772FF] transition">
                 Register
               </button>
-            </SignUpButton>
+            
           </Show>
 
           {/* ✅ SIGNED IN */}
