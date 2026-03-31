@@ -346,7 +346,7 @@ We shall edit this section.
 BELOW WILL CONTAIN LABELS AND THEIR PLACE HOLDERS (SOME MUST HAVE A TEXT AREA)
 3. Dissertations Tile
 4. Author name
-5. Research Methodology
+5. Research Methodology (Must have a sufficient text area)
 6. Abstract (Must have a sufficient text area)
 7. Campus
 8. Course 
@@ -356,10 +356,82 @@ BELOW WILL CONTAIN LABELS AND THEIR PLACE HOLDERS (SOME MUST HAVE A TEXT AREA)
 12. Publication date and time
 13. Number of pages
 14. File Size.
-15. Citations
+15. Citations(Must have a sufficient text area)
 17. Preview Button leading to the Preview page.
 Display it on console. Store all this info in the local storage.  
 16. Publish Button. 
 
 Be creative and come up with a simple and modern layout and design. And use tailwind css for the styling. Dont design something boring. 
 Like make it look like a modern website.
+
+
+_________________________________________________________________________________________________________
+
+Create a slideshow of images from this output below. If i select the image, its image_url will be displayed on the console.
+Fetched images: 
+Array(10) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
+​
+0: Object { id: 11, image_url: "https://i.pinimg.com/736x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+1: Object { id: 12, image_url: "https://i.pinimg.com/736x/76/4a/33/764a33f17c92b99ab92ee9743e9886d3.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+2: Object { id: 13, image_url: "https://i.pinimg.com/736x/ff/bd/dd/ffbddd37b2ceffe750fc534bfa11429d.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+3: Object { id: 14, image_url: "https://i.pinimg.com/736x/7b/fd/87/7bfd875e85fbbed980e9df59bcde8579.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+4: Object { id: 15, image_url: "https://i.pinimg.com/736x/86/7f/3f/867f3f61befef9469597a6df87d59cf8.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+5: Object { id: 16, image_url: "https://i.pinimg.com/736x/62/0d/1e/620d1e45864bec4a2bf0a79dd001696d.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+6: Object { id: 17, image_url: "https://i.pinimg.com/736x/fe/3b/d5/fe3bd50410c3a940ad9fcb5909e57c63.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+7: Object { id: 18, image_url: "https://i.pinimg.com/736x/e4/7f/a1/e47fa1185f0fd036cba8f8dee24f67ae.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+8: Object { id: 19, image_url: "https://i.pinimg.com/736x/5a/1d/f2/5a1df24535df04111d07cf8ed046f799.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+9: Object { id: 20, image_url: "https://i.pinimg.com/736x/80/8a/9b/808a9bf28241e155681127e61bdb8386.jpg", created_at: "2026-03-31T09:14:53.000Z" }
+​
+length: 10
+
+
+**********************************************************************************************
+Below the above div.
+Design a  card that contains:
+1. large {fontawesome-file-icon}
+2. h2 with text "Upload PDF Document"
+3. paragraph with text "Drag and drop your PDF document here."
+4. Button with text "SELECT FILE" with background color of #3772FF
+
+You dont need to rewrite the page. give me the parts in need to add there.
+
+**********************************************************************************************
+
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Come up with placeholders or text area for the fields below.
+3. Dissertations Tile
+4. Author name
+5. Research Methodology (Must have a sufficient text area)
+6. Abstract (Must have a sufficient text area)
+7. Campus
+8. Course 
+9. Faculty 
+10. Supervisor 
+11. Licenses and Usage Rights
+12. Publication date and time
+13. Number of pages
+15. Citations(Must have a sufficient text area)
+16. Publish button with its background set as primary color
+
+This is output for uniData For Campus, Course, Faculty. This will be selected. Remember not to confuse stuff. 
+[{"id":1,"name":"Nkozi","faculties":[{"id":1,"name":"Science","courses":[{"id":2,"name":"Bachelor of Science in Computer Science"},{"id":3,"name":"Bachelor of Science in Information Technology"}]},{"id":2,"name":"Agriculture","courses":[{"id":1,"name":"Bachelor of Agriculture"}]},{"id":3,"name":"Law","courses":[{"id":5,"name":"Bachelor of Laws"}]},{"id":4,"name":"Education","courses":[{"id":6,"name":"Bachelor of Science with Education"},{"id":7,"name":"Bachelor of Arts with Education"}]},{"id":5,"name":"Business Administration and Management","courses":[{"id":4,"name":"Bachelor of Accounting and Finance"}]}]},{"id":2,"name":"Lubaga","faculties":[]},{"id":3,"name":"Masaka","faculties":[]},{"id":4,"name":"Mbale","faculties":[]},{"id":5,"name":"Ngetta","faculties":[]},{"id":6,"name":"Fort Portal","faculties":[]}]
+
+And we need to also store in useState to be display in console when the publish button is clicked.
+Be creative. Build a cool and modern desgin and layout. Use tailwind

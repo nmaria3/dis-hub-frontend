@@ -9,6 +9,7 @@ export function useFetchImages() {
 
   const hasRun = useRef(false);
   const [images, setImages] = useState([]);
+  const [uniData, setUniData] = useState([]);
 
   useEffect(() => {
     if (!userLoaded || !authLoaded) return;
@@ -37,8 +38,27 @@ export function useFetchImages() {
       }
     }
 
+    async function fetchUniversityData() {
+      try {
+        const res = await fetch("http://localhost:5000/auth/complete-profile-data");
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch university data");
+        }
+
+        const data = await res.json();
+
+        console.log("University Data:", data.data);
+
+        setUniData(data.data);
+      } catch (err) {
+        console.error("University data error:", err);
+      }
+    }
+
     fetchImages();
+    fetchUniversityData();
   }, [userLoaded, authLoaded, isSignedIn, user, getToken]);
 
-  return { images };
+  return { images, uniData };
 }
