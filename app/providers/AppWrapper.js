@@ -2,33 +2,46 @@
 
 import { usePathname } from "next/navigation";
 import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 import Footer from "../components/Footer";
 import { ToastContainer } from "react-toastify";
 import { useEffect, useRef } from "react";
 import { useUser } from "@clerk/nextjs";
 
 export default function AppWrapper({ children }) {
-  const { user, isSignedIn } = useUser();
+  const { user, isSignedIn, isLoaded } = useUser();
   const pathname = usePathname();
 
   const hasChecked = useRef(false);
 
+  // =========================
+  // 🚫 ROUTE CHECKS
+  // =========================
   const isAuthPage =
     pathname.startsWith("/auth") ||
     pathname.startsWith("/sign-in") ||
     pathname.startsWith("/sign-up") ||
     pathname.startsWith("/profile-check");
 
+  const isAdminRoute = pathname.startsWith("/admin");
+
+  // =========================
+  // 👤 USER ROLE CHECK
+  // =========================
+  const email = user?.emailAddresses?.[0]?.emailAddress;
+  const isAdmin = email === "maria.admin.umu@gmail.com";
+
+  // =========================
+  // 🔐 PROFILE CHECK (STUDENT ONLY)
+  // =========================
   useEffect(() => {
-    // ✅ 1. Wait for user
-    if (!isSignedIn || !user) return;
+    // ✅ Wait until Clerk fully loads
+    if (!isLoaded || !isSignedIn || !user) return;
 
-    console.log("User is signed in:", user.id);
-
-    // ✅ 2. Prevent multiple runs
+    // 🚫 Prevent multiple executions
     if (hasChecked.current) return;
 
-    // ✅ 3. Skip pages that should NEVER trigger this
+    // 🚫 Skip auth + profile pages
     const skipRoutes = [
       "/sign-in",
       "/sign-up",
@@ -38,60 +51,76 @@ export default function AppWrapper({ children }) {
 
     if (skipRoutes.includes(pathname)) return;
 
+    // 🚫 Skip admin completely
+    if (isAdmin) {
+      console.log("Admin detected → skipping profile check");
+      return;
+    }
+
     hasChecked.current = true;
 
-    // alert(`AppWrapper check for user ${user.id} on path ${pathname}`); // Debug alert
-    async function profileStatus(userId) {
-
-      const adminRedirected = sessionStorage.getItem("adminRedirected");
-      const email = user.emailAddresses[0].emailAddress;
-      // alert(`Checking profile for user ${userId} with email ${email}. Admin redirected: ${adminRedirected}`); // Debug alert
-      if (adminRedirected || email === "maria.admin.umu@gmail.com") {
-        console.log("Admin is already registered.");
-        return;
-      }
-
+    async function checkProfile() {
       try {
         const res = await fetch("http://localhost:5000/auth/check-profile", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ clerkId: userId, "page": pathname }),
+          body: JSON.stringify({
+            clerkId: user.id,
+            page: pathname,
+          }),
         });
 
         const data = await res.json();
-        // alert(`Profile status response: ${JSON.stringify(data)}`); // Debug alert
 
-        // ✅ 4. If profile is complete → STOP everything
+        // ✅ Profile complete → do nothing
         if (data.complete === true) {
           return;
         }
 
+        // 🚫 Backend denied request
         if (data.message === "Extra Request has been denied") {
-          console.log(data.message || "Access denied to profile check.");
+          console.log("Profile check skipped by backend");
           return;
         }
 
-        // ✅ 5. Redirect ONLY if not already there
+        // 🔁 Redirect if needed (avoid loop)
         if (data.redirect && pathname !== data.redirect) {
           window.location.href = data.redirect;
         }
+
       } catch (err) {
         console.error("Profile check failed:", err);
       }
     }
 
-    profileStatus(user.id);
-  }, [user, isSignedIn, pathname]);
+    checkProfile();
+  }, [isLoaded, isSignedIn, user, pathname, isAdmin]);
+
+  // =========================
+  // 🎯 HEADER LOGIC
+  // =========================
+  const renderHeader = () => {
+    // ❌ No header on auth pages
+    if (isAuthPage) return null;
+
+    // ✅ Admin gets AdminHeader ALWAYS
+    if (isAdmin) return <AdminHeader />;
+
+    // ✅ Students / guests get normal header
+    return <Header />;
+  };
 
   return (
     <>
-      {!isAuthPage && <Header />}
+      {/* 🔝 HEADER */}
+      {renderHeader()}
 
+      {/* 🔔 TOASTS */}
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -102,8 +131,10 @@ export default function AppWrapper({ children }) {
         theme="light"
       />
 
+      {/* 📄 PAGE CONTENT */}
       {children}
 
+      {/* 🔻 FOOTER (hidden on auth pages) */}
       {!isAuthPage && <Footer />}
     </>
   );

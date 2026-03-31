@@ -225,3 +225,141 @@ information to fill in the template
         'course' : 'Infomation Tech. student'
     }
 ]
+
+_________________________________________________________________________________________________________
+Important information
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+We shall use PLayfair display for headings and Roboto for body text
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create an uploads page for the admin to upload the dissertationss.
+So far i we can fetched images and displayed. 
+/admin/upload page below
+"use client";
+
+import { useEffect } from "react";
+import { useFetchImages } from "../utils/useFetchImages";
+import Image from "next/image";
+
+export default function Uploads() {
+    const { images, loading, error } = useFetchImages();
+    
+    useEffect(() => {
+        console.log("Component mounted, fetching images...");
+        
+            console.log("Fetched images:", images);
+    }, [images]);
+
+  return (
+    <section className="p-6">
+      <h1 className="text-3xl font-heading">Uploads</h1>
+
+      {/* ✅ Loading */}
+      {loading && <p className="mt-4">Loading images...</p>}
+
+      {/* ❌ Error */}
+      {error && <p className="mt-4 text-red-500">{error}</p>}
+
+      {/* ⚠️ Empty */}
+      {!loading && images.length === 0 && (
+        <p className="mt-4">No images found</p>
+      )}
+
+      {/* ✅ Images */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        {Array.isArray(images) &&
+          images.map((img) => (
+            <div key={img.id} className="relative w-full h-48">
+              <Image
+                src={img.image_url}
+                alt="Uploaded image"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
+          ))}
+      </div>
+    </section>
+  );
+}
+
+/utils/useFetchImages.js
+
+"use client";
+
+import { useAuth, useUser } from "@clerk/nextjs";
+import { useEffect, useRef, useState } from "react";
+
+export function useFetchImages() {
+  const { user, isLoaded: userLoaded } = useUser();
+  const { getToken, isLoaded: authLoaded, isSignedIn } = useAuth();
+
+  const hasRun = useRef(false);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    if (!userLoaded || !authLoaded) return;
+
+    if (!isSignedIn || !user) return;
+
+    if (hasRun.current) return;
+    hasRun.current = true;
+
+    async function fetchImages() {
+      try {
+        const token = await getToken();
+
+        if (!token) return;
+
+        const res = await fetch("http://localhost:5000/admin/get-images", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await res.json();
+        setImages(data.data);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    fetchImages();
+  }, [userLoaded, authLoaded, isSignedIn, user, getToken]);
+
+  return { images };
+}
+
+output from the backend server
+{"success":true,"count":10,"data":[{"id":11,"image_url":"https://i.pinimg.com/736x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":12,"image_url":"https://i.pinimg.com/736x/76/4a/33/764a33f17c92b99ab92ee9743e9886d3.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":13,"image_url":"https://i.pinimg.com/736x/ff/bd/dd/ffbddd37b2ceffe750fc534bfa11429d.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":14,"image_url":"https://i.pinimg.com/736x/7b/fd/87/7bfd875e85fbbed980e9df59bcde8579.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":15,"image_url":"https://i.pinimg.com/736x/86/7f/3f/867f3f61befef9469597a6df87d59cf8.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":16,"image_url":"https://i.pinimg.com/736x/62/0d/1e/620d1e45864bec4a2bf0a79dd001696d.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":17,"image_url":"https://i.pinimg.com/736x/fe/3b/d5/fe3bd50410c3a940ad9fcb5909e57c63.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":18,"image_url":"https://i.pinimg.com/736x/e4/7f/a1/e47fa1185f0fd036cba8f8dee24f67ae.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":19,"image_url":"https://i.pinimg.com/736x/5a/1d/f2/5a1df24535df04111d07cf8ed046f799.jpg","created_at":"2026-03-31T09:14:53.000Z"},{"id":20,"image_url":"https://i.pinimg.com/736x/80/8a/9b/808a9bf28241e155681127e61bdb8386.jpg","created_at":"2026-03-31T09:14:53.000Z"}]}
+
+We are gonna edit the uploads page alone.
+We shall edit this section.
+1. Will be a simple slideshow where the user can pick an image for the dissertation.
+2. Be create and design a big "Upload PDF Document" Form Button. 
+
+BELOW WILL CONTAIN LABELS AND THEIR PLACE HOLDERS (SOME MUST HAVE A TEXT AREA)
+3. Dissertations Tile
+4. Author name
+5. Research Methodology
+6. Abstract (Must have a sufficient text area)
+7. Campus
+8. Course 
+9. Faculty 
+10. Supervisor 
+11. Licenses and Usage Rights
+12. Publication date and time
+13. Number of pages
+14. File Size.
+15. Citations
+17. Preview Button leading to the Preview page.
+Display it on console. Store all this info in the local storage.  
+16. Publish Button. 
+
+Be creative and come up with a simple and modern layout and design. And use tailwind css for the styling. Dont design something boring. 
+Like make it look like a modern website.
