@@ -34,6 +34,12 @@ export default function CompleteProfile() {
     hasSyncedWithBackend.current = true;
 
     const syncUser = async () => {
+
+      const adminRedirected = sessionStorage.getItem("adminRedirected");
+      if (adminRedirected) {
+        sessionStorage.removeItem("adminRedirected");
+        return;
+      }
       try {
         const token = await getToken();
         const res = await fetch("http://localhost:5000/auth/sign-up", {
@@ -57,6 +63,18 @@ export default function CompleteProfile() {
         }
 
         toast.success(data.message || "User synced successfully.", { position: "top-center" });
+
+        // alert("Message: " + data.message); // Debug alert for message
+
+        if (data.message === "Admin already registered")
+        {
+          alert("Admin already registered. Redirecting to admin dashboard..."); // Debug alert for admin case
+          setTimeout(() => {
+            // Store in sessionStorage to prevent infinite loop if backend keeps responding with "Admin already registered"
+            sessionStorage.setItem("adminRedirected", "true");
+            if (data.redirect) window.location.href = data.redirect;
+          }, 1000); // 1 seconds delay for better UX
+        }
 
         if (data.message === "Profile complete") {
           setTimeout(() => {

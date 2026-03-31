@@ -13,6 +13,8 @@ export default function ProfileCheck() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // console.log(user)
+    // alert(JSON.stringify(user)) // Debug alert
     if (!isLoaded || !isSignedIn || !user || hasRun.current) return;
 
     hasRun.current = true;
@@ -34,6 +36,8 @@ export default function ProfileCheck() {
         });
 
         const data = await res.json();
+        // alert(`Profile check response: ${JSON.stringify(data)}`); // Debug alert
+
 
         // ⏳ Add delay for smooth UX
         setTimeout(() => {

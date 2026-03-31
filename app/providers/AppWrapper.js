@@ -23,6 +23,8 @@ export default function AppWrapper({ children }) {
     // ✅ 1. Wait for user
     if (!isSignedIn || !user) return;
 
+    console.log("User is signed in:", user.id);
+
     // ✅ 2. Prevent multiple runs
     if (hasChecked.current) return;
 
@@ -38,20 +40,36 @@ export default function AppWrapper({ children }) {
 
     hasChecked.current = true;
 
+    // alert(`AppWrapper check for user ${user.id} on path ${pathname}`); // Debug alert
     async function profileStatus(userId) {
+
+      const adminRedirected = sessionStorage.getItem("adminRedirected");
+      const email = user.emailAddresses[0].emailAddress;
+      // alert(`Checking profile for user ${userId} with email ${email}. Admin redirected: ${adminRedirected}`); // Debug alert
+      if (adminRedirected || email === "maria.admin.umu@gmail.com") {
+        console.log("Admin is already registered.");
+        return;
+      }
+
       try {
         const res = await fetch("http://localhost:5000/auth/check-profile", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ clerkId: userId }),
+          body: JSON.stringify({ clerkId: userId, "page": pathname }),
         });
 
         const data = await res.json();
+        // alert(`Profile status response: ${JSON.stringify(data)}`); // Debug alert
 
         // ✅ 4. If profile is complete → STOP everything
         if (data.complete === true) {
+          return;
+        }
+
+        if (data.message === "Extra Request has been denied") {
+          console.log(data.message || "Access denied to profile check.");
           return;
         }
 

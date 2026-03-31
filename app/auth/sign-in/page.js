@@ -1,21 +1,20 @@
 "use client";
 
+import { useClerk } from "@clerk/nextjs";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 export default function SignInPage() {
-  const router = useRouter();
+  const { openSignIn } = useClerk();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push("https://cute-crow-45.accounts.dev/sign-in");
-    }, 2000);
-
-    return () => clearTimeout(timer); // cleanup
-  }, [router]);
+    openSignIn();
+    // openSignIn({
+    //   redirectUrl: "/auth/profile-check",
+    // });
+  }, []);
 
   return (
-    <div style={{ textAlign: "center", margin: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>Redirecting to sign-in...</h1>
     </div>
   );

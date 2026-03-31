@@ -1,22 +1,17 @@
 "use client";
 
-// app/sign-up/page.js
-import { useRouter } from "next/navigation";
+import { useClerk } from "@clerk/nextjs";
 import { useEffect } from "react";
 
 export default function SignUpPage() {
-  const router = useRouter();
+  const { openSignUp } = useClerk();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push("https://cute-crow-45.accounts.dev/sign-up");
-    }, 2000);
-
-    return () => clearTimeout(timer); // cleanup
-  }, [router]);
+    openSignUp();
+  }, []);
 
   return (
-    <div style={{ textAlign: "center", margin: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>Redirecting to sign-up...</h1>
     </div>
   );
