@@ -5,6 +5,7 @@ import { useFetchImages } from "../utils/useFetchImages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "@clerk/nextjs";
+import { toast } from "react-toastify";
 
 export default function Uploads() {
   const { images, uniData, loading, error } = useFetchImages();
@@ -48,7 +49,7 @@ export default function Uploads() {
 
   const handleClickImage = () => {
     if (images.length === 0) return;
-    console.log("Selected image_url:", images[currentIndex].image_url);
+    // console.log("Selected image_url:", images[currentIndex].image_url);
   };
   
   const fileInputRef = useRef(null);
@@ -64,15 +65,15 @@ export default function Uploads() {
 
     setSelectedFile(file); // ✅ store file for UI
 
-    console.log("Selected File:", file);
-    console.log("File Name:", file.name);
+    // console.log("Selected File:", file);
+    // console.log("File Name:", file.name);
 
     const size =
       file.size / 1024 / 1024 >= 1
         ? `${(file.size / 1024 / 1024).toFixed(2)} MB`
         : `${(file.size / 1024).toFixed(2)} KB`;
 
-    console.log("File Size:", size);
+    // console.log("File Size:", size);
   };
 
   // 🖱️ Click button → open file picker
@@ -157,7 +158,18 @@ const handlePublish = async () => {
     });
 
     const data = await res.json();
-    console.log("✅ Response:", data);
+    // console.log("✅ Response:", data);
+
+    if (res.ok) {
+      toast.success("Dissertation published successfully!");
+      // Open dissertation in new tab
+      if (data.file_url) {
+        window.open(data.file_url, "_blank");
+      }
+      // Optionally reset form here
+    } else {
+      toast.error(data.message || "Failed to publish dissertation");
+    }
 
   } catch (err) {
     console.error(err);
@@ -166,7 +178,7 @@ const handlePublish = async () => {
 
   if (loading) return <p>Loading images...</p>;
   if (error) return <p>Error loading images: {error}</p>;
-  if (images.length === 0) return <p>No images available.</p>;
+  if (images.length === 0) return <p className="text-center p-3">No images available Or Taking time to load.</p>;
 
 
   return (

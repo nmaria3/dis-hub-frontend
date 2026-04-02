@@ -48,7 +48,7 @@ export function useFetchImages() {
 
         const data = await res.json();
 
-        console.log("University Data:", data.data);
+        // console.log("University Data:", data.data);
 
         setUniData(data.data);
       } catch (err) {

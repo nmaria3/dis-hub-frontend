@@ -1,6 +1,5 @@
 "use client";
 
-import { CreateOrganization } from "@clerk/nextjs";
 import { useState } from "react";
 
 export default function TestPage() {
