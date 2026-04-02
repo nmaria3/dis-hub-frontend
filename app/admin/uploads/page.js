@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useFetchImages } from "../utils/useFetchImages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "@clerk/nextjs";
 
 export default function Uploads() {
   const { images, uniData, loading, error } = useFetchImages();
@@ -27,7 +28,8 @@ export default function Uploads() {
 
   // Set a random image on first load
   useEffect(() => {
-    console.log("Uni Data: ", uniData)
+    // console.log("Uni Data: ", uniData)
+
     if (images.length > 0) {
       const randomIndex = Math.floor(Math.random() * images.length);
       setCurrentIndex(randomIndex);
@@ -55,10 +57,10 @@ export default function Uploads() {
   const handleFileSelect = (file) => {
     if (!file) return;
 
-    if (file.type !== "application/pdf") {
-      console.error("Only PDF files are allowed");
-      return;
-    }
+    // if (file.type !== "application/pdf") {
+    //   console.error("Only PDF files are allowed");
+    //   return;
+    // }
 
     setSelectedFile(file); // ✅ store file for UI
 
@@ -113,34 +115,54 @@ export default function Uploads() {
     setCourses(selected ? selected.courses : []);
   };
 
-  const handlePublish = () => {
-    if (images.length === 0) return;
+const { getToken } = useAuth(); // make sure this is imported
+
+const handlePublish = async () => {
+  if (!selectedFile) {
+    alert("Please select a PDF file");
+    return;
+  }
+
+  try {
+    const token = await getToken(); // ✅ ALWAYS GET FRESH TOKEN
+
+    if (!token) {
+      alert("Authentication failed. Please login again.");
+      return;
+    }
 
     const selectedImage = images[currentIndex];
 
-    const selectedCampus = uniData.find(
-      (c) => c.id === Number(formData.campus)
-    );
+    const form = new FormData();
 
-    const selectedFaculty = faculties.find(
-      (f) => f.id === Number(formData.faculty)
-    );
+    form.append("file", selectedFile);
+    form.append("title", formData.title);
+    form.append("author", formData.author);
+    form.append("methodology", formData.methodology);
+    form.append("abstract", formData.abstract);
+    form.append("campus", formData.campus);
+    form.append("faculty", formData.faculty);
+    form.append("course", formData.course);
+    form.append("supervisor", formData.supervisor);
+    form.append("pages", formData.pages);
+    form.append("license", formData.license);
+    form.append("image_url", selectedImage?.image_url);
 
-    const selectedCourse = courses.find(
-      (c) => c.id === Number(formData.course)
-    );
+    const res = await fetch("http://localhost:5000/admin/upload-dissertation", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`, // ✅ fresh token
+      },
+      body: form,
+    });
 
-    const fullData = {
-      ...formData,
-      image_url: selectedImage?.image_url,
-      file: selectedFile,
-      campus_name: selectedCampus?.name,
-      faculty_name: selectedFaculty?.name,
-      course_name: selectedCourse?.name,
-    };
+    const data = await res.json();
+    console.log("✅ Response:", data);
 
-    console.log("🔥 FINAL COMBINED DATA:", fullData);
-  };
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   if (loading) return <p>Loading images...</p>;
   if (error) return <p>Error loading images: {error}</p>;
