@@ -15,7 +15,8 @@ import {
 
 export default function AdminHeader() {
   const [isOpen, setIsOpen] = useState(false);
-    const router = useRouter();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const router = useRouter();
 
   // 🔐 AUTH STATE
   const { isSignedIn, isLoaded, user } = useUser();
@@ -46,9 +47,28 @@ export default function AdminHeader() {
             </Link>
           </Show>
 
-          <Link href="#" className="hover:text-[#3772FF] transition">
-            Dissertations
-          </Link>
+          <div className="relative">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="hover:text-[#3772FF] transition flex items-center gap-1"
+            >
+              Dissertations <i className="fas fa-chevron-down text-xs"></i>
+            </button>
+
+            {isDropdownOpen && (
+              <div className="absolute top-8 left-0 bg-white shadow-md rounded-md w-48 z-50">
+                <Link href="/admin/uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                  Uploads
+                </Link>
+                <Link href="/admin/uploads/multiple-uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                  Multiple Uploads
+                </Link>
+                <Link href="/admin/dissertations" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                  View Dissertations
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link href="#" className="hover:text-[#3772FF] transition">
             Analytics
@@ -97,34 +117,58 @@ export default function AdminHeader() {
       {/* MOBILE MENU */}
       {isOpen && (
         <div className="md:hidden flex flex-col gap-4 px-6 pb-4 font-body text-black bg-white">
+
           {/* ✅ SIGNED IN */}
           <Show when="signed-in">
-            <Link href="/students/dashboard" className="hover:text-[#3772FF] transition">
+            <Link href="/admin/dashboard" className="hover:text-[#3772FF] transition">
               Dashboard
             </Link>
           </Show>
 
+          {/* 🔽 DROPDOWN (MOBILE VERSION) */}
+          <div className="relative">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="hover:text-[#3772FF] transition flex items-center gap-1"
+            >
+              Dissertations <i className="fas fa-chevron-down text-xs"></i>
+            </button>
+
+            {isDropdownOpen && (
+              <div className="absolute top-8 left-0 bg-white shadow-md rounded-md w-48 z-50">
+                <Link href="/admin/uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                  Uploads
+                </Link>
+                <Link href="/admin/multiple-uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                  Multiple Uploads
+                </Link>
+                <Link href="/admin/dissertations" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                  View Dissertations
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link href="#" className="hover:text-[#3772FF]">
-            Browse
+            Analytics
           </Link>
 
           <Link href="#" className="hover:text-[#3772FF]">
-            About
+            Students
           </Link>
 
           {/* ❌ NOT SIGNED IN */}
           <Show when="signed-out">
-            
-              <button onClick={() => router.push("/auth/sign-in")} className="text-left hover:text-[#3772FF]">
-                Login
-              </button>
-            
+            <button onClick={() => router.push("/auth/sign-in")} className="text-left hover:text-[#3772FF]">
+              Login
+            </button>
 
-            
-              <button onClick={() => router.push("/auth/sign-up")} className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md text-left hover:bg-white hover:text-[#3772FF] transition">
-                Register
-              </button>
-            
+            <button
+              onClick={() => router.push("/auth/sign-up")}
+              className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md text-left hover:bg-white hover:text-[#3772FF] transition"
+            >
+              Register
+            </button>
           </Show>
 
           {/* ✅ SIGNED IN */}
