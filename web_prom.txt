@@ -435,3 +435,27 @@ This is output for uniData For Campus, Course, Faculty. This will be selected. R
 
 And we need to also store in useState to be display in console when the publish button is clicked.
 Be creative. Build a cool and modern desgin and layout. Use tailwind
+
+
+_________________________________________________________________________________________________________
+
+Important information (STARTING GUIDE)
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a view page:
+h1 with title "Manage Dissertations"
+paragraph with text "Oversee the academic lineage of Dis-Hub. Cirate, Validate and maintain the highest standards of research documentation."
+
+Below Create;
+search Featured
+sort and filter Featured
+Display each dissertation inform of a card. With an edit and delete button. When the buttons are clicked, they should print the dissertation id and title to the console.
+Be creative and come out with a modern layout. 
+
+Tip: Make it cool.

@@ -63,7 +63,7 @@ export default function AdminHeader() {
                 <Link href="/admin/uploads/multiple-uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
                   Multiple Uploads
                 </Link>
-                <Link href="/admin/dissertations" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                <Link href="/admin/uploads/view" className="block px-4 py-2 hover:bg-[#EFEFEF]">
                   View Dissertations
                 </Link>
               </div>
@@ -139,10 +139,10 @@ export default function AdminHeader() {
                 <Link href="/admin/uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
                   Uploads
                 </Link>
-                <Link href="/admin/multiple-uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                <Link href="/admin/uploads/multiple-uploads" className="block px-4 py-2 hover:bg-[#EFEFEF]">
                   Multiple Uploads
                 </Link>
-                <Link href="/admin/dissertations" className="block px-4 py-2 hover:bg-[#EFEFEF]">
+                <Link href="/admin/uploads/view" className="block px-4 py-2 hover:bg-[#EFEFEF]">
                   View Dissertations
                 </Link>
               </div>

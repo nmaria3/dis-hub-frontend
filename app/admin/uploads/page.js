@@ -136,6 +136,8 @@ const handlePublish = async () => {
 
     const form = new FormData();
 
+    console.log(form);
+
     form.append("file", selectedFile);
     form.append("title", formData.title);
     form.append("author", formData.author);

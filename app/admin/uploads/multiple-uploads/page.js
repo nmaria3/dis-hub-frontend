@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { faSlack } from "@fortawesome/free-brands-svg-icons";
 
 export default function MultipleUploads() {
   const { getToken } = useAuth();
@@ -14,6 +15,7 @@ export default function MultipleUploads() {
   const [message, setMessage] = useState("Waiting...");
   const router = useRouter();
   const pollingRef = useRef(null);
+  const [off, setOff] = useState(false);
 
   // =========================
   // 📥 FETCH FILES FROM SERVER
@@ -38,6 +40,12 @@ export default function MultipleUploads() {
       return;
     }
 
+    if (!off)
+    {
+      console.log("Polling is Off");
+      return;
+    }
+
     pollingRef.current = setInterval(async () => {
       try {
         const token = await getToken();
@@ -56,6 +64,7 @@ export default function MultipleUploads() {
         // ✅ STOP CONDITION
         if (data.progress === 100) {
           console.log("🛑 Stopping polling...");
+          setOff(false);
 
           clearInterval(pollingRef.current);
           pollingRef.current = null; // 🔥 VERY IMPORTANT
@@ -164,6 +173,7 @@ export default function MultipleUploads() {
       }
 
       startPolling(); // start polling for status updates
+      setOff(true);
       alert("🚀 Upload has started!");
 
 
