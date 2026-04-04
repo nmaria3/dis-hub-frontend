@@ -268,7 +268,7 @@ export default function MultipleUploads() {
                     <p className="text-sm text-gray-500">{file.size}</p>
                   </div>
 
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <button
                       onClick={() => handleDelete(file.name)}
                       className="text-red-500 hover:text-red-700 font-medium text-sm"
