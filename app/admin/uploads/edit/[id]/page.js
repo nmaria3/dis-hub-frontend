@@ -4,10 +4,12 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function EditDissertation() {
   const { id } = useParams();
   const { getToken } = useAuth();
+  const router = useRouter();
 
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState([]);
@@ -242,6 +244,15 @@ export default function EditDissertation() {
             style={{ backgroundColor: "#3772FF" }}
           >
             Update Dissertation
+          </button>
+          
+          <button
+            type="button"
+            onClick={() => {router.push("/admin/uploads/view")}}
+            className="py-3 text-[#3772FF] border-2 border-[#3772FF] font-semibold rounded"
+            style={{ backgroundColor: "transparent" }}
+          >
+            Cancel
           </button>
 
         </form>
