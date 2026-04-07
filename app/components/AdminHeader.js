@@ -74,7 +74,7 @@ export default function AdminHeader() {
             Analytics
           </Link>
 
-          <Link href="#" className="hover:text-[#3772FF] transition">
+          <Link href="/admin/students" className="hover:text-[#3772FF] transition">
             Students
           </Link>
 
@@ -153,7 +153,7 @@ export default function AdminHeader() {
             Analytics
           </Link>
 
-          <Link href="#" className="hover:text-[#3772FF]">
+          <Link href="/admin/students" className="hover:text-[#3772FF]">
             Students
           </Link>
 

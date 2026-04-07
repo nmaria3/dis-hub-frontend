@@ -459,3 +459,93 @@ Display each dissertation inform of a card. With an edit and delete button. When
 Be creative and come out with a modern layout. 
 
 Tip: Make it cool.
+
+
+_________________________________________________________________________________________________________
+
+Important information (STARTING GUIDE)
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a page for students:
+1. h1 with text "Students Directory"
+2. paragraph with text "Manage the Scholar Community on Dis-Hub"
+
+3. Two cards:
+ON the left Card:
+-> h3 with text "Total number of student"
+-> Large text Number {3} colored with primary color.
+
+On the Right Card:
+-> h3 with text "Active"
+-> Large text Number {2} colored with primary color.
+
+You are gonna make a GET request to this endpoint
+http://localhost:5000/admin/get-student/activity
+
+Response
+{
+    "success": true,
+    "count": 3,
+    "data": [
+        {
+            "id": 1,
+            "clerkid": "user_3Bg9F1rHi2mozXwEYGxmv338AaB",
+            "role": "student",
+            "phone_number": "+256708932090",
+            "campus_name": "Nkozi",
+            "faculty_name": "Science",
+            "course_name": "Bachelor of Science in Information Technology",
+            "last_seen_eat": "2026-04-07T14:27:40.000Z",
+            "status": "offline",
+            "full_name": "Nankinga Maria",
+            "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQmc5RjNBcVhtOHZMSjdNZnZTdUM5NmZ2dE0ifQ",
+            "email": "nankinga.maria@stud.umu.ac.ug",
+            "clerk_created_at": 1774899738466,
+            "last_sign_in_at": 1775571146786
+        },
+        {
+            "id": 2,
+            "clerkid": "user_3BhfzAtTn84DPTr1exAk6wW7AUq",
+            "role": "admin",
+            "phone_number": null,
+            "campus_name": null,
+            "faculty_name": null,
+            "course_name": null,
+            "last_seen_eat": null,
+            "status": "offline",
+            "full_name": "Maria Admin",
+            "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQmhmekFITWVCaVY1WFY2Y3RwWnZITlkweWkifQ",
+            "email": "maria.admin.umu@gmail.com",
+            "clerk_created_at": 1774946482434,
+            "last_sign_in_at": 1775573451042
+        },
+        {
+            "id": 3,
+            "clerkid": "user_3C1taTDbQafMSlwXVgulBiHw061",
+            "role": "student",
+            "phone_number": "+256764876299",
+            "campus_name": "Nkozi",
+            "faculty_name": "Science",
+            "course_name": "Bachelor of Science in Information Technology",
+            "last_seen_eat": "2026-04-07T14:27:25.000Z",
+            "status": "offline",
+            "full_name": "KYATEKA Given",
+            "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQzF0YU1RZUhuT21iWEhUeUx3a2JkcTEzbHgifQ",
+            "email": "kyateka.given@stud.umu.ac.ug",
+            "clerk_created_at": 1775564966779,
+            "last_sign_in_at": 1775566834040
+        }
+    ]
+}
+
+You are to display that information into cards.
+MAke the the card modern and cool.
+Be creative with the layout and ensure that they are responsive on small screens as well.
+It must meet design standards as well.
+Dont forget to send token to backend.

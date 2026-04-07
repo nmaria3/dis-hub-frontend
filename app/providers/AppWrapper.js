@@ -6,10 +6,11 @@ import AdminHeader from "../components/AdminHeader";
 import Footer from "../components/Footer";
 import { ToastContainer } from "react-toastify";
 import { useEffect, useRef } from "react";
-import { useUser } from "@clerk/nextjs";
+import { useUser, useAuth } from "@clerk/nextjs";
 
 export default function AppWrapper({ children }) {
   const { user, isSignedIn, isLoaded } = useUser();
+  const { getToken } = useAuth();
   const pathname = usePathname();
 
   const hasChecked = useRef(false);
@@ -40,6 +41,29 @@ export default function AppWrapper({ children }) {
 
     // 🚫 Prevent multiple executions
     if (hasChecked.current) return;
+
+    async function getActivity(){
+      const token = await getToken();
+
+      const res = await fetch("http://localhost:5000/student/api/activity", {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+
+      if (!res.ok)
+      {
+        alert("Unable to update Student Activity. Contact Admin Immediately...");
+      }
+    }
+    if (!isAdmin){
+      getActivity()
+      setInterval(async () => {
+        getActivity()
+      }, 60000);
+    }
+
 
     // 🚫 Skip auth + profile pages
     const skipRoutes = [
