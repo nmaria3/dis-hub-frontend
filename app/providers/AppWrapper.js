@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Header from "../components/Header";
 import AdminHeader from "../components/AdminHeader";
 import Footer from "../components/Footer";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { useEffect, useRef } from "react";
 import { useUser, useAuth } from "@clerk/nextjs";
 
@@ -54,7 +54,7 @@ export default function AppWrapper({ children }) {
 
       if (!res.ok)
       {
-        alert("Unable to update Student Activity. Contact Admin Immediately...");
+        toast.warning("Unable to update Student Activity. Contact Admin Immediately...");
       }
     }
     if (!isAdmin){

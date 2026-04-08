@@ -12,6 +12,8 @@ export default function CompleteProfile() {
   const hasFetchedProfileData = useRef(false);
   const hasSyncedWithBackend = useRef(false);
 
+  const [stop, setStop] = useState(false)
+
   const [campusesData, setCampusesData] = useState([]);
   const [faculties, setFaculties] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -40,6 +42,15 @@ export default function CompleteProfile() {
         sessionStorage.removeItem("adminRedirected");
         return;
       }
+
+      // 🚫 already executed → stop
+      if (stop) {
+        console.log("Already executed. Skipping...");
+        return;
+      }
+
+      // if(true) return; // Stop here
+
       try {
         const token = await getToken();
         const res = await fetch("http://localhost:5000/auth/sign-up", {
@@ -63,6 +74,9 @@ export default function CompleteProfile() {
         }
 
         toast.success(data.message || "User synced successfully.", { position: "top-center" });
+
+        // ✅ IMPORTANT: mark as executed AFTER success
+        setStop(true);
 
         // alert("Message: " + data.message); // Debug alert for message
 
@@ -89,7 +103,9 @@ export default function CompleteProfile() {
       }
     };
 
-    syncUser();
+    setTimeout(() => {
+      syncUser();
+    }, 5000);
   }, [isLoaded, isSignedIn, user, getToken, signOut]);
 
   // =========================
