@@ -50,8 +50,12 @@ export default function Header() {
             Browse
           </Link>
 
-          <Link href="#" className="hover:text-[#3772FF] transition">
+          <Link href="/about" className="hover:text-[#3772FF] transition">
             About
+          </Link>
+
+          <Link href="/contact" className="hover:text-[#3772FF] transition">
+            Contact
           </Link>
 
           {/* ❌ NOT SIGNED IN */}
@@ -106,8 +110,12 @@ export default function Header() {
             Browse
           </Link>
 
-          <Link href="#" className="hover:text-[#3772FF]">
+          <Link href="/about" className="hover:text-[#3772FF]">
             About
+          </Link>
+
+          <Link href="/contact" className="hover:text-[#3772FF]">
+            Contact
           </Link>
 
           {/* ❌ NOT SIGNED IN */}

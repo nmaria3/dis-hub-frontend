@@ -549,3 +549,86 @@ MAke the the card modern and cool.
 Be creative with the layout and ensure that they are responsive on small screens as well.
 It must meet design standards as well.
 Dont forget to send token to backend.
+_________________________________________________________________________________________________________
+
+Important information (STARTING GUIDE)
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create an about page with the folowing sections:
+1. Hero Section with a Primary color set as background color and given an opacity of 20%
+Inside the Hero Section will be 2 horizontal divs:
+-> On the Left:
+- Span with text "Our Mission" with a primary color and background with a primary color and opacity of the background color set to 35% and add some padding to it.
+- h1 with text "Democratizing Access to Academic Research"
+- paragraph with text "A central repository for university dissertations, bridging the gap between students and global knowledge. We believe research should be a public good."
+
+-> On the right
+- Responsive Image container containing an image "https://i.pinimg.com/736x/49/ee/67/49ee67e90e9fe483b93810610525a034.jpg"
+
+2. Our story Section will be 2 horizontal divs:
+-> On the left:
+- Image gallery of four images.
+"https://i.pinimg.com/736x/84/be/39/84be398b8719f168d3d858a2f667851b.jpg"
+"https://i.pinimg.com/736x/12/8a/e1/128ae1fd2b81d9b12b3814fa2f160e90.jpg"
+"https://i.pinimg.com/736x/2e/14/13/2e1413d4b3d23a3ab681ea34b669c85b.jpg"
+"https://i.pinimg.com/736x/e6/63/d2/e663d2db79febddbcd7ec8ea81648796.jpg"
+
+-> On the Right:
+- h2 with text "Our Story"
+- paragraph with text "Dis-Hub was founded with a single vision to ensure that groundbreaking academic research isn’t confined to dusty shelves or expensive paywalls."
+- paragraph with text "We exist to empower students and researchers by providing a seamless open-access platform for university dissertations from around the world. Founded by a team of libraries and developers, we saw the friction in academic publishing  and decided to build a bridge."
+
+- 2 transparent cards:
+    On the left::
+        span with large text "50k+" in primary color
+        paragraph with text DISSERTATIONS
+    On the right::
+        span with large text "100+" in primary color
+        paragraph with text PARTNERS
+
+
+3. Campuses section
+Maake a GET request to "http://localhost:5000/campuses"
+
+Expected Response
+{
+    "success": true,
+    "count": 6,
+    "data": [
+        {
+            "id": 1,
+            "name": "Nkozi"
+        },
+        {
+            "id": 2,
+            "name": "Lubaga"
+        },
+        {
+            "id": 3,
+            "name": "Masaka"
+        },
+        {
+            "id": 4,
+            "name": "Mbale"
+        },
+        {
+            "id": 5,
+            "name": "Ngetta"
+        },
+        {
+            "id": 6,
+            "name": "Fort Portal"
+        }
+    ]
+}
+
+Display All campuses in form of cards. Should become inverted on hover. 
+
+
+

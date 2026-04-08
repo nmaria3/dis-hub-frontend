@@ -41,17 +41,17 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-[#3772FF] transition">
+              <Link href="about" className="hover:text-[#3772FF] transition">
                 About
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-[#3772FF] transition">
+              <Link href="contact" className="hover:text-[#3772FF] transition">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-[#3772FF] transition">
+              <Link href="/FAQ" className="hover:text-[#3772FF] transition">
                 FAQ
               </Link>
             </li>
