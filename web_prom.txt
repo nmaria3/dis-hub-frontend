@@ -631,4 +631,233 @@ Expected Response
 Display All campuses in form of cards. Should become inverted on hover. 
 
 
+_________________________________________________________________________________________________________
 
+Important information (STARTING GUIDE)
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+We are gonna work on Browse Page.
+It should make a request to "http://localhost:5000/student/get-dissertations"
+And the REsponse will be displayed below at the very bottom.
+
+Lets continue:
+We shall fetch and display dissertations as cards.
+However Design the card to have a rectangular image and don't give it a big height but do make  it responsive.
+The Be creative with the card layout/ structure and design, Use tailwind of course.
+Each card should display the image, title, author, a few words from the abstract, year and course. 2 buttons i.e., "View" and "Login to Download"(Change to "Download" if the user isSignedIn)
+
+Now the browsers page should have a heading and a small paragraph. 
+Then also search, sort and filter options (By title, author, year, campus, faculty and course) on the left side and cards to the right, separated by a thin vertical line in primary color that should turn horizontal on small screens
+
+Now users who access this page, will be able to basically seacrch for their dissertations.
+Now we shal alllow only those that are signed in to go to the view page and will have a downlaod button available on the card. 
+However those who click on the card, it should print the id before sending them to teh view page. 
+
+RESPONSE AS PROMISED
+{
+    "message": "Dissertations fetched successfully",
+    "count": 5,
+    "data": [
+        {
+            "id": 22,
+            "title": "Government by",
+            "author_name": "Linda M. Carter",
+            "abstract": "The adoption of Artificial Intelligence (AI) within federal administrative agencies is transforming how governments operate and deliver public services. This study explores the growing reliance on algorithmic systems in decision-making processes, including policy implementation, resource allocation, and regulatory enforcement. It examines how AI improves efficiency, reduces human error, and enhances data-driven governance. However, the research also highlights critical concerns such as transparency, accountability, and algorithmic bias. The study investigates how automated systems may unintentionally reinforce existing inequalities when trained on biased data. Furthermore, it evaluates the legal and ethical implications of delegating authority to machine-based systems in public administration. Through case studies and policy analysis, the research identifies gaps in current regulatory frameworks governing AI use in government. It also considers the role of oversight institutions in maintaining fairness and public trust. Findings suggest that while AI offers significant advantages in managing complex administrative tasks, its unchecked use may undermine democratic principles. The study concludes by recommending clear governance structures, ethical guidelines, and human oversight to ensure responsible integration of AI in federal agencies.",
+            "year": 2026,
+            "methodology": "Qualitative research using case studies and policy analysis",
+            "supervisor": "Dr. Michael A. Okello",
+            "pages": 123,
+            "file": {
+                "size": "1.94 MB",
+                "url": "https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720722/Dissertations/ACUS-AI-Report.pdf",
+                "download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:ACUS-AI-Report/v1775720722/Dissertations/ACUS-AI-Report.pdf",
+                "hash": "daa8c111dccf747587448279bf000b84"
+            },
+            "image_url": "https://i.pinimg.com/736x/86/7f/3f/867f3f61befef9469597a6df87d59cf8.jpg",
+            "license": "© 2026 Linda M. Carter. All rights reserved.\n\nThis dissertation is made available strictly for academic and research purposes only. \nNo part of this work may be reproduced, distributed, or transmitted in any form \nor by any means without prior written permission from the author, \nexcept for brief quotations used in scholarly analysis or review.\n\nUnauthorized use may result in legal consequences.",
+            "citations": "{\"apa\":\" (2026). *Government by*. Uganda Martyrs University. Dis-Hub. https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720722/Dissertations/ACUS-AI-Report.pdf\",\"mla\":\". \\\"Government by.\\\" Uganda Martyrs University, 2026. Dis-Hub, https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720722/Dissertations/ACUS-AI-Report.pdf.\",\"harvard\":\" (2026) 'Government by', Uganda Martyrs University. Available at: https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720722/Dissertations/ACUS-AI-Report.pdf (Accessed: 09/04/2026).\"}",
+            "academic": {
+                "campus": {
+                    "id": 1,
+                    "name": "Nkozi"
+                },
+                "faculty": {
+                    "id": 1,
+                    "name": "Science"
+                },
+                "course": {
+                    "id": 3,
+                    "name": "Bachelor of Science in Information Technology"
+                }
+            },
+            "uploaded_by": {
+                "id": 2,
+                "clerkId": "user_3BhfzAtTn84DPTr1exAk6wW7AUq",
+                "role": "admin"
+            },
+            "updated_at": "2026-04-09T04:45:24.000Z"
+        },
+        {
+            "id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "author_name": "Chinedu O. Adeyemi",
+            "abstract": "This study investigates the effect of board characteristics and audit committee attributes on earnings management practices among listed non-financial firms in Nigeria. It examines how factors such as board size, independence, expertise, and frequency of meetings influence the quality of financial reporting. The research further explores the role of audit committees in monitoring management behavior and ensuring transparency in financial disclosures. Using panel data collected from annual reports of selected firms, the study analyzes the relationship between corporate governance structures and the likelihood of earnings manipulation. The findings reveal that stronger governance mechanisms, particularly independent and financially literate audit committees, significantly reduce earnings management. However, weaknesses in enforcement and regulatory oversight may limit their effectiveness. The study also highlights the importance of aligning corporate governance practices with international standards to improve investor confidence. It concludes that enhancing board effectiveness and strengthening audit committees are critical in promoting accountability and reducing financial misreporting. Recommendations include policy reforms, improved regulatory supervision, and continuous training for board members.",
+            "year": 2026,
+            "methodology": "Quantitative research using panel data analysis of financial reports",
+            "supervisor": "Dr. Ibrahim S. Bello",
+            "pages": 19,
+            "file": {
+                "size": "387.81 KB",
+                "url": "https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf",
+                "download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf",
+                "hash": "8ebf04965af75770bfe17fe8363deeec"
+            },
+            "image_url": "https://i.pinimg.com/736x/fe/3b/d5/fe3bd50410c3a940ad9fcb5909e57c63.jpg",
+            "license": "© 2026 Chinedu O. Adeyemi. All rights reserved.\n\nThis dissertation is made available strictly for academic and research purposes only. \nNo part of this work may be reproduced, distributed, or transmitted in any form \nor by any means without prior written permission from the author, \nexcept for brief quotations used in scholarly analysis or review.\n\nUnauthorized use may result in legal consequences.",
+            "citations": "{\"apa\":\" (2026). *Effect of Board and Audit Committee Attributes on Earnings*. Uganda Martyrs University. Dis-Hub. https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf\",\"mla\":\". \\\"Effect of Board and Audit Committee Attributes on Earnings.\\\" Uganda Martyrs University, 2026. Dis-Hub, https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf.\",\"harvard\":\" (2026) 'Effect of Board and Audit Committee Attributes on Earnings', Uganda Martyrs University. Available at: https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf (Accessed: 09/04/2026).\"}",
+            "academic": {
+                "campus": {
+                    "id": 1,
+                    "name": "Nkozi"
+                },
+                "faculty": {
+                    "id": 5,
+                    "name": "Business Administration and Management"
+                },
+                "course": {
+                    "id": null,
+                    "name": null
+                }
+            },
+            "uploaded_by": {
+                "id": 2,
+                "clerkId": "user_3BhfzAtTn84DPTr1exAk6wW7AUq",
+                "role": "admin"
+            },
+            "updated_at": "2026-04-09T04:45:31.000Z"
+        },
+        {
+            "id": 24,
+            "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+            "author_name": "Brenda A. Nakato",
+            "abstract": "The Law Development Centre Act establishes the legal framework for the training and development of legal professionals in Uganda. This study examines the role of the Act in shaping the standards of legal education and ensuring the competence of advocates entering the legal profession. It explores how the institution contributes to bridging the gap between academic legal studies and practical application through professional courses such as the Bar Course. The research analyzes the structure, mandates, and functions of the Law Development Centre as outlined in the Act. It further evaluates the effectiveness of the Centre in maintaining quality legal training, discipline, and ethical standards among practitioners. Challenges such as limited capacity, increasing student enrollment, and evolving legal demands are also discussed. The study considers reforms aimed at improving accessibility and efficiency within the institution. Findings suggest that while the Act has played a significant role in strengthening legal education, continuous updates are necessary to align with modern legal practices. The study concludes by recommending policy reforms, increased funding, and technological integration to enhance the Centre’s impact on Uganda’s legal system.",
+            "year": 2026,
+            "methodology": "Qualitative analysis based on legal documents and institutional reports",
+            "supervisor": "Dr. Henry K. Ssemakula",
+            "pages": 11,
+            "file": {
+                "size": "255.66 KB",
+                "url": "https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf",
+                "download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:Law_Development_Centre_Act-1970-21/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf",
+                "hash": "4137c81e780eecc30156ad01b820db8a"
+            },
+            "image_url": "https://i.pinimg.com/736x/fe/3b/d5/fe3bd50410c3a940ad9fcb5909e57c63.jpg",
+            "license": "© 2026 Brenda A. Nakato. All rights reserved.\n\nThis dissertation is made available strictly for academic and research purposes only. \nNo part of this work may be reproduced, distributed, or transmitted in any form \nor by any means without prior written permission from the author, \nexcept for brief quotations used in scholarly analysis or review.\n\nUnauthorized use may result in legal consequences.",
+            "citations": "{\"apa\":\" (2026). *The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author*. Uganda Martyrs University. Dis-Hub. https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf\",\"mla\":\". \\\"The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author.\\\" Uganda Martyrs University, 2026. Dis-Hub, https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf.\",\"harvard\":\" (2026) 'The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author', Uganda Martyrs University. Available at: https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf (Accessed: 09/04/2026).\"}",
+            "academic": {
+                "campus": {
+                    "id": 1,
+                    "name": "Nkozi"
+                },
+                "faculty": {
+                    "id": 3,
+                    "name": "Law"
+                },
+                "course": {
+                    "id": 5,
+                    "name": "Bachelor of Laws"
+                }
+            },
+            "uploaded_by": {
+                "id": 2,
+                "clerkId": "user_3BhfzAtTn84DPTr1exAk6wW7AUq",
+                "role": "admin"
+            },
+            "updated_at": "2026-04-09T04:47:58.000Z"
+        },
+        {
+            "id": 25,
+            "title": "The AI",
+            "author_name": "John K. Mensah",
+            "abstract": "Artificial Intelligence (AI) continues to evolve at an unprecedented rate, presenting both transformative opportunities and significant risks to humanity. This study explores the dual nature of AI as a driver of economic growth and innovation, while also posing potential existential threats if left unchecked. The research examines how AI technologies are being integrated into critical sectors such as healthcare, finance, and governance, highlighting their benefits in efficiency and decision-making. However, it also raises concerns about loss of human control, ethical dilemmas, and unintended consequences of autonomous systems. The study further investigates the alignment problem, where AI systems may act in ways that do not reflect human values. Through a comprehensive review of current developments, the research emphasizes the importance of regulatory frameworks and global cooperation. It also discusses the role of policymakers, developers, and institutions in ensuring safe AI deployment. Findings suggest that while AI can significantly boost productivity and solve complex problems, insufficient oversight may lead to irreversible outcomes. The study concludes by recommending balanced strategies that promote innovation while mitigating long-term risks.",
+            "year": 2026,
+            "methodology": "Mixed-methods approach combining literature review and expert interviews",
+            "supervisor": "Dr. Sarah N. Kato",
+            "pages": 17,
+            "file": {
+                "size": "309.25 KB",
+                "url": "https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf",
+                "download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf",
+                "hash": "b19c6cbf4738babf41ff6fe7c9bf5536"
+            },
+            "image_url": "https://i.pinimg.com/736x/62/0d/1e/620d1e45864bec4a2bf0a79dd001696d.jpg",
+            "license": "© 2026 John K. Mensah. All rights reserved.\n\nThis dissertation is made available strictly for academic and research purposes only. \nNo part of this work may be reproduced, distributed, or transmitted in any form \nor by any means without prior written permission from the author, \nexcept for brief quotations used in scholarly analysis or review.\n\nUnauthorized use may result in legal consequences.",
+            "citations": "{\"apa\":\" (2026). *The AI*. Uganda Martyrs University. Dis-Hub. https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf\",\"mla\":\". \\\"The AI.\\\" Uganda Martyrs University, 2026. Dis-Hub, https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf.\",\"harvard\":\" (2026) 'The AI', Uganda Martyrs University. Available at: https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf (Accessed: 09/04/2026).\"}",
+            "academic": {
+                "campus": {
+                    "id": 1,
+                    "name": "Nkozi"
+                },
+                "faculty": {
+                    "id": 1,
+                    "name": "Science"
+                },
+                "course": {
+                    "id": 2,
+                    "name": "Bachelor of Science in Computer Science"
+                }
+            },
+            "uploaded_by": {
+                "id": 2,
+                "clerkId": "user_3BhfzAtTn84DPTr1exAk6wW7AUq",
+                "role": "admin"
+            },
+            "updated_at": "2026-04-09T04:45:42.000Z"
+        },
+        {
+            "id": 26,
+            "title": "The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author",
+            "author_name": "Peter S. Lubega",
+            "abstract": "The Uganda Agriculture Insurance Subsidy (UAIS) Scheme was introduced to enhance resilience among farmers and promote agricultural productivity in the face of climate-related risks. This study examines the effectiveness of the scheme in improving farmers’ access to insurance services and stabilizing agricultural income. It explores how the subsidy has influenced farmer participation, crop yield consistency, and financial security across different regions. The research analyzes government reports, farmer feedback, and agricultural performance data to assess the overall impact of the program. While the scheme has increased awareness and uptake of agricultural insurance, challenges such as limited coverage, delayed compensation, and lack of information persist. The study also evaluates the role of financial institutions and insurance providers in supporting the initiative. Findings indicate that although the UAIS scheme has positively contributed to risk management, its long-term success depends on improved implementation strategies and broader outreach. The study concludes by recommending policy enhancements, increased funding, and better stakeholder coordination to maximize the benefits of the scheme.",
+            "year": 2026,
+            "methodology": "Quantitative analysis using survey data and government reports",
+            "supervisor": "Dr. Grace N. Namusoke",
+            "pages": 23,
+            "file": {
+                "size": "3.65 MB",
+                "url": "https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720764/Dissertations/UAIS-Abridged-Version-February-2024.pdf",
+                "download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:UAIS-Abridged-Version-February-2024/v1775720764/Dissertations/UAIS-Abridged-Version-February-2024.pdf",
+                "hash": "beb4a0e658291a38be5b541f38fc9ede"
+            },
+            "image_url": "https://i.pinimg.com/736x/5a/1d/f2/5a1df24535df04111d07cf8ed046f799.jpg",
+            "license": "© 2026 Peter S. Lubega. All rights reserved.\n\nThis dissertation is made available strictly for academic and research purposes only. \nNo part of this work may be reproduced, distributed, or transmitted in any form \nor by any means without prior written permission from the author, \nexcept for brief quotations used in scholarly analysis or review.\n\nUnauthorized use may result in legal consequences.",
+            "citations": "{\"apa\":\" (2026). *The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author*. Uganda Martyrs University. Dis-Hub. https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720764/Dissertations/UAIS-Abridged-Version-February-2024.pdf\",\"mla\":\". \\\"The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author.\\\" Uganda Martyrs University, 2026. Dis-Hub, https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720764/Dissertations/UAIS-Abridged-Version-February-2024.pdf.\",\"harvard\":\" (2026) 'The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author', Uganda Martyrs University. Available at: https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720764/Dissertations/UAIS-Abridged-Version-February-2024.pdf (Accessed: 09/04/2026).\"}",
+            "academic": {
+                "campus": {
+                    "id": 1,
+                    "name": "Nkozi"
+                },
+                "faculty": {
+                    "id": 2,
+                    "name": "Agriculture"
+                },
+                "course": {
+                    "id": null,
+                    "name": null
+                }
+            },
+            "uploaded_by": {
+                "id": 2,
+                "clerkId": "user_3BhfzAtTn84DPTr1exAk6wW7AUq",
+                "role": "admin"
+            },
+            "updated_at": "2026-04-09T04:46:08.000Z"
+        }
+    ]
+}

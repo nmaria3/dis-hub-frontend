@@ -46,7 +46,7 @@ export default function Header() {
             </Link>
           </Show>
 
-          <Link href="#" className="hover:text-[#3772FF] transition">
+          <Link href="/browse" className="hover:text-[#3772FF] transition">
             Browse
           </Link>
 
@@ -106,7 +106,7 @@ export default function Header() {
             </Link>
           </Show>
 
-          <Link href="#" className="hover:text-[#3772FF]">
+          <Link href="/browse" className="hover:text-[#3772FF]">
             Browse
           </Link>
 
