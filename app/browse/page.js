@@ -1,15 +1,16 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUser } from '@clerk/nextjs';
+import { useUser, useAuth } from '@clerk/nextjs';
 import { toast } from 'react-toastify';
 
-const BrowsePage = () => {
+export default function BrowsePage() {
   const [dissertations, setDissertations] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { isSignedIn } = useUser();
+  const { getToken } = useAuth();
 
   // Filter States
   const [search, setSearch] = useState("");
@@ -64,27 +65,55 @@ const BrowsePage = () => {
   const handleView = (id) => {
     console.log("Viewing Dissertation ID:", id);
     if (isSignedIn) {
-      router.push(`/view/${id}`);
+      router.push(`/students/dissertations/${id}`);
     } else {
       toast.info("Please login to view details.");
     }
   };
 
-    const handleDownload = (file) => {
-        if (!isSignedIn) {
-            toast.info("Please login to download");
-            window.location.href = "/auth/sign-in";
-            return;
-        }
+  const handleDownload = async(id, file) => {
+    if (!isSignedIn) {
+        toast.info("Please login to download");
+        window.location.href = "/auth/sign-in";
+        return;
+    }
 
-        // 🔥 trigger download
-        const link = document.createElement("a");
-        link.href = file.download_url;
-        link.setAttribute("download", "");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    const token = await getToken();
+
+    const res = await fetch(
+        "http://localhost:5000/student/track/download",
+        {
+            method: "POST",
+            headers: {
+                Authorization : `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body : JSON.stringify({file_id : id})
+        }
+    );
+
+    if(res.ok)
+    {
+        const data = await res.json();
+        console.log(data.message);
+        setTimeout(() => {
+            window.location.href=download_url;
+        }, 1500);
+    }
+    else
+    {
+        console.log("Failed to download!!!");
+        return;
+    }
+
+    // 🔥 trigger download
+    const link = document.createElement("a");
+    link.href = file.download_url;
+    link.setAttribute("download", "");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen bg-[#EFEFEF] text-black p-4 md:p-8">
@@ -184,7 +213,7 @@ const BrowsePage = () => {
                         View
                       </button>
                       <button 
-                        onClick={() => handleDownload(item.file)}
+                        onClick={() => handleDownload(item.id, item.file)}
                         className="flex-1 border border-[#3772FF] text-[#3772FF] py-2 px-4 rounded text-sm font-semibold hover:bg-[#3772FF] hover:text-white transition-all"
                       >
                         {isSignedIn ? "Download" : "Login to Download"}
@@ -203,5 +232,3 @@ const BrowsePage = () => {
     </div>
   );
 };
-
-export default BrowsePage;

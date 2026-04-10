@@ -861,3 +861,216 @@ RESPONSE AS PROMISED
         }
     ]
 }
+
+
+_________________________________________________________________________________________________________
+
+Important information (STARTING GUIDE)
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a View Page:
+Get the id from url "http://localhost:3000/students/dissertations/24"
+Response
+{
+    "dissertation": {
+        "id": 24,
+        "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+        "author_name": "Brenda A. Nakato",
+        "abstract": "The Law Development Centre Act establishes the legal framework for the training and development of legal professionals in Uganda. This study examines the role of the Act in shaping the standards of legal education and ensuring the competence of advocates entering the legal profession. It explores how the institution contributes to bridging the gap between academic legal studies and practical application through professional courses such as the Bar Course. The research analyzes the structure, mandates, and functions of the Law Development Centre as outlined in the Act. It further evaluates the effectiveness of the Centre in maintaining quality legal training, discipline, and ethical standards among practitioners. Challenges such as limited capacity, increasing student enrollment, and evolving legal demands are also discussed. The study considers reforms aimed at improving accessibility and efficiency within the institution. Findings suggest that while the Act has played a significant role in strengthening legal education, continuous updates are necessary to align with modern legal practices. The study concludes by recommending policy reforms, increased funding, and technological integration to enhance the Centre’s impact on Uganda’s legal system.",
+        "methodology": "Qualitative analysis based on legal documents and institutional reports",
+        "supervisor": "Dr. Henry K. Ssemakula",
+        "image_url": "https://i.pinimg.com/736x/e4/7f/a1/e47fa1185f0fd036cba8f8dee24f67ae.jpg",
+        "license": "© 2026 Brenda A. Nakato. All rights reserved.\n\nThis dissertation is made available strictly for academic and research purposes only. \nNo part of this work may be reproduced, distributed, or transmitted in any form \nor by any means without prior written permission from the author, \nexcept for brief quotations used in scholarly analysis or review.\n\nUnauthorized use may result in legal consequences.",
+        "citations": "{\"apa\":\" (2026). *The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author*. Uganda Martyrs University. Dis-Hub. https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf\",\"mla\":\". \\\"The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author.\\\" Uganda Martyrs University, 2026. Dis-Hub, https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf.\",\"harvard\":\" (2026) 'The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author', Uganda Martyrs University. Available at: https://res.cloudinary.com/dkqxz5dql/image/upload/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf (Accessed: 09/04/2026).\"}",
+        "campus_id": 1,
+        "faculty_id": 3,
+        "courses_id": 5
+    },
+    "campuses": [
+        {
+            "id": 1,
+            "name": "Nkozi"
+        },
+        {
+            "id": 2,
+            "name": "Lubaga"
+        },
+        {
+            "id": 3,
+            "name": "Masaka"
+        },
+        {
+            "id": 4,
+            "name": "Mbale"
+        },
+        {
+            "id": 5,
+            "name": "Ngetta"
+        },
+        {
+            "id": 6,
+            "name": "Fort Portal"
+        }
+    ],
+    "faculties": [
+        {
+            "id": 1,
+            "name": "Science",
+            "campus_id": 1
+        },
+        {
+            "id": 2,
+            "name": "Agriculture",
+            "campus_id": 1
+        },
+        {
+            "id": 3,
+            "name": "Law",
+            "campus_id": 1
+        },
+        {
+            "id": 4,
+            "name": "Education",
+            "campus_id": 1
+        },
+        {
+            "id": 5,
+            "name": "Business Administration and Management",
+            "campus_id": 1
+        }
+    ],
+    "courses": [
+        {
+            "id": 1,
+            "name": "Bachelor of Agriculture",
+            "faculty_id": 2
+        },
+        {
+            "id": 2,
+            "name": "Bachelor of Science in Computer Science",
+            "faculty_id": 1
+        },
+        {
+            "id": 3,
+            "name": "Bachelor of Science in Information Technology",
+            "faculty_id": 1
+        },
+        {
+            "id": 4,
+            "name": "Bachelor of Accounting and Finance",
+            "faculty_id": 5
+        },
+        {
+            "id": 5,
+            "name": "Bachelor of Laws",
+            "faculty_id": 3
+        },
+        {
+            "id": 6,
+            "name": "Bachelor of Science with Education",
+            "faculty_id": 4
+        },
+        {
+            "id": 7,
+            "name": "Bachelor of Arts with Education",
+            "faculty_id": 4
+        }
+    ],
+    "images": [
+        {
+            "id": 11,
+            "image_url": "https://i.pinimg.com/736x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 12,
+            "image_url": "https://i.pinimg.com/736x/76/4a/33/764a33f17c92b99ab92ee9743e9886d3.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 13,
+            "image_url": "https://i.pinimg.com/736x/ff/bd/dd/ffbddd37b2ceffe750fc534bfa11429d.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 14,
+            "image_url": "https://i.pinimg.com/736x/7b/fd/87/7bfd875e85fbbed980e9df59bcde8579.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 15,
+            "image_url": "https://i.pinimg.com/736x/86/7f/3f/867f3f61befef9469597a6df87d59cf8.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 16,
+            "image_url": "https://i.pinimg.com/736x/62/0d/1e/620d1e45864bec4a2bf0a79dd001696d.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 17,
+            "image_url": "https://i.pinimg.com/736x/fe/3b/d5/fe3bd50410c3a940ad9fcb5909e57c63.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 18,
+            "image_url": "https://i.pinimg.com/736x/e4/7f/a1/e47fa1185f0fd036cba8f8dee24f67ae.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 19,
+            "image_url": "https://i.pinimg.com/736x/5a/1d/f2/5a1df24535df04111d07cf8ed046f799.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        },
+        {
+            "id": 20,
+            "image_url": "https://i.pinimg.com/736x/80/8a/9b/808a9bf28241e155681127e61bdb8386.jpg",
+            "created_at": "2026-03-31T09:14:53.000Z"
+        }
+    ]
+}
+
+Make a request using that same id with url "http://localhost:5000/student/dissertation/24/stats"
+Response
+{
+    "dissertation_id": 24,
+    "views": 3,
+    "downloads": 1,
+    "bookmarks": 1
+}
+
+Now display in 2 divs aligned horizontally
+On the left
+1. title
+2. author 
+3. year
+Display rhe image here
+4. 3 cards showing the icon, number and VIEWS, DOWNLOADS and BOOKMARKS.
+5. Full Abstract
+6. Research Methodology
+7. Citations
+8. Licenses
+
+On the right will be a card
+Inverted Link Button To view PDF
+Download Primary Button to Download PDF
+Save button on the left and share button on the right. (generate url to copy)
+heading MetaData
+- File size
+- Campus
+- Faculty
+- Course
+- Supervisor
+- University i.e. Uganda Martyrs University.
+
+Note: Use font-awesome for exmaple
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+
+then Format the Citations into three formats. Its already a JSON.
