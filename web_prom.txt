@@ -1428,46 +1428,108 @@ Trending this week
         }
     ]
 
-User: {"isLoaded":true,"isSignedIn":true,"user":
+_________________________________________________________________________________________________________
+
+Create an Admin Dashboard Page with the following:
+1. h1 with test Admin Dashboard
+2. paragraph with text "Manage the digital legacy of Dis-Hub. Monitor research velocity, student engagement and scholarly impact across departments." Then primary button with text "New Dissertation" taking the user to "/admin/uploads".
+
+3 cards with :
+1. Total Dissertations
+2. Total Students
+3. Total Downloads
+
+two divs.
+On the left will be top 5 Recent Uploads
+
+On the right will be Latest Scholars.
+
+Make a request to "http://localhost:5000/admin/dashboard/analytics"
+
+And use this data in the response below
 {
-    "id":"user_3C4wZiwJj98OsY96qpeYhDk3UqB",
-    "pathRoot":"/me",
-    "externalId":null,
-    "username":null,
-    "emailAddresses":[{
-            "id":"idn_3C4wZlyJZQirqh390cSQewN9VbI",
-            "pathRoot":"/me/email_addresses",
-            "emailAddress":"nankinga.maria@stud.umu.ac.ug",
-            "matchesSsoConnection":false,
-            "linkedTo":[{
-                    "id":"idn_3C4wZjiTQu9iFKhKlHkF5QCecps",
-                    "pathRoot":"",
-                    "type":"oauth_google"
-                }],
-            "verification": {
-                    "pathRoot":"",
-                    "status":"verified",
-                    "strategy":"from_oauth_google",
-                    "nonce":null,
-                    "message":null,
-                    "externalVerificationRedirectURL":null,
-                    "attempts":null,
-                    "expireAt":"2026-04-13T12:25:46.168Z","error":null
-                }
-    }],
-    "phoneNumbers":[],
-    "web3Wallets":[],
-    "externalAccounts":[{
-        "id":"eac_3C4wZnYxItmUXiTgtqmMFIwEjs7",
-        "pathRoot":"/me/external_accounts",
-        "identificationId":"idn_3C4wZjiTQu9iFKhKlHkF5QCecps",
-        "provider":"google",
-        "providerUserId":"113869909695087323691",
-        "emailAddress":"nankinga.maria@stud.umu.ac.ug",
-        "approvedScopes":"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid profile",
-        "firstName":"Nankinga","lastName":"Maria","imageUrl":"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMRzJYeFJpTFZkMGl3RzB5aTJ2bWFzcVYtSFJMbmdoOU9QMGM2ajZjOVBGdEJLSVVvPXMxMDAwLWMiLCJzIjoieEJRRnpkQkdoRTBINWRoYjlnTEp4VFZESlBCY3dVY05rekpDc04yVGs1YyJ9","username":"","phoneNumber":"","publicMetadata":{},"label":null,"verification":{"pathRoot":"","status":"verified","strategy":"oauth_google","nonce":null,"message":null,"externalVerificationRedirectURL":null,"attempts":null,"expireAt":"2026-04-08T14:33:21.527Z","error":null}}],"enterpriseAccounts":[],"passkeys":[],"organizationMemberships":[],"passwordEnabled":false,"firstName":"Nankinga","lastName":"Maria","fullName":"Nankinga Maria","primaryEmailAddressId":"idn_3C4wZlyJZQirqh390cSQewN9VbI","primaryEmailAddress":{"id":"idn_3C4wZlyJZQirqh390cSQewN9VbI","pathRoot":"/me/email_addresses","emailAddress":"nankinga.maria@stud.umu.ac.ug","matchesSsoConnection":false,"linkedTo":[{"id":"idn_3C4wZjiTQu9iFKhKlHkF5QCecps","pathRoot":"","type":"oauth_google"}],"verification":{"pathRoot":"","status":"verified","strategy":"from_oauth_google","nonce":null,"message":null,"externalVerificationRedirectURL":null,"attempts":null,"expireAt":"2026-04-13T12:25:46.168Z","error":null}},"primaryPhoneNumberId":null,"primaryPhoneNumber":null,"primaryWeb3WalletId":null,"primaryWeb3Wallet":null,"imageUrl":"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQzR3Wmk1eU9XbG9VRWlQVVdRZzdIc2NFbXgifQ","hasImage":true,"twoFactorEnabled":false,"totpEnabled":false,"backupCodeEnabled":false,"publicMetadata":{},"unsafeMetadata":{},"createOrganizationEnabled":true,"createOrganizationsLimit":null,"deleteSelfEnabled":false,"lastSignInAt":"2026-04-11T11:04:42.665Z","legalAcceptedAt":null,"updatedAt":"2026-04-11T11:04:42.748Z","createdAt":"2026-04-08T14:23:27.591Z","cachedSessionsWithActivities":null}
+    "message": "Admin dashboard data fetched successfully",
+    "stats": {
+        "totalDissertations": 5,
+        "totalStudents": 2,
+        "totalDownloads": 3
+    },
+    "recent": {
+        "dissertations": [
+            {
+                "id": 24,
+                "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+                "author_name": "Brenda A. Nakato",
+                "faculty": "Law",
+                "updated_at": "2026-04-09T10:15:57.000Z"
+            },
+            {
+                "id": 26,
+                "title": "The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author",
+                "author_name": "Peter S. Lubega",
+                "faculty": "Agriculture",
+                "updated_at": "2026-04-09T10:15:11.000Z"
+            },
+            {
+                "id": 23,
+                "title": "Effect of Board and Audit Committee Attributes on Earnings",
+                "author_name": "Chinedu O. Adeyemi",
+                "faculty": "Business Administration and Management",
+                "updated_at": "2026-04-09T10:13:55.000Z"
+            },
+            {
+                "id": 25,
+                "title": "The AI",
+                "author_name": "John K. Mensah",
+                "faculty": "Science",
+                "updated_at": "2026-04-09T04:45:42.000Z"
+            },
+            {
+                "id": 22,
+                "title": "Government by",
+                "author_name": "Linda M. Carter",
+                "faculty": "Science",
+                "updated_at": "2026-04-09T04:45:24.000Z"
+            }
+        ],
+        "students": [
+            {
+                "clerkId": "user_3C9pmk6QZot1ciTvk55iTPnZ1Zd",
+                "full_name": "KYATEKA Given",
+                "email": "kyateka.given@stud.umu.ac.ug",
+                "created_at": "2026-04-10T04:56:56.000Z"
+            },
+            {
+                "clerkId": "user_3C4wZiwJj98OsY96qpeYhDk3UqB",
+                "full_name": "Nankinga Maria",
+                "email": "nankinga.maria@stud.umu.ac.ug",
+                "created_at": "2026-04-08T11:23:38.000Z"
+            }
+        ]
+    }
 }
 
+Resume from here
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import NotificationBell from "@/app/components/NotificationBell";
 
-​
+export default async function Dashboard() {
+  const { userId, getToken } = await auth();
 
+  if (!userId) {
+    redirect("/");
+  }
+
+  return (
+    <div className="p-10 bg-[#EFEFEF] min-h-screen">
+      <h1 className="text-3xl font-bold">Dashboard</h1>
+      <p className="mt-4">
+        Welcome to your dashboard.
+      </p>
+
+      {/* 🔔 Floating Bell */}
+      <NotificationBell />
+    </div>
+  );
+}
