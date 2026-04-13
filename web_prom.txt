@@ -1175,3 +1175,255 @@ title
 author, year
 abstract [Part of it]
 View Button to use the dissertation and send the user to the view page,Download button as well.
+
+_________________________________________________________________________________________________________
+
+Now make a Student Dashboard Page:
+h1 with text "Welcome back, Maria😄👋"
+paragraph with text "Continue your research journey and explore new academic frontiers"
+Now on the right side on the above two should be a primary button "Start New Search"
+
+Make a GET request to "http://localhost:5000/student/dashboard/analytics"
+
+Response
+{
+    "success": true,
+    "user": {
+        "id": 12,
+        "clerkId": "user_3C4wZiwJj98OsY96qpeYhDk3UqB"
+    },
+    "downloads": {
+        "total": 3,
+        "this_month": 3
+    },
+    "bookmarks": {
+        "total": 3,
+        "latest": "2026-04-11T09:07:24.000Z"
+    },
+    "views": {
+        "this_month": 3
+    },
+    "recentDownloads": [
+        {
+            "dissertation_id": 26,
+            "title": "The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author",
+            "author_name": "Peter S. Lubega",
+            "pages": 23,
+            "year": 2026,
+            "course": "Bachelor of Agriculture"
+        },
+        {
+            "dissertation_id": 25,
+            "title": "The AI",
+            "author_name": "John K. Mensah",
+            "pages": 17,
+            "year": 2026,
+            "course": "Bachelor of Science in Computer Science"
+        },
+        {
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "author_name": "Chinedu O. Adeyemi",
+            "pages": 19,
+            "year": 2026,
+            "course": "Bachelor of Accounting and Finance"
+        }
+    ],
+    "topDissertation": {
+        "dissertation_id": 23,
+        "title": "Effect of Board and Audit Committee Attributes on Earnings",
+        "downloads": 1,
+        "percentage": "33.33"
+    },
+    "activity": {
+        "days_active": 2,
+        "raw": {
+            "Fri Apr 10 2026 00:00:00 GMT+0300 (East Africa Time)": true,
+            "Sat Apr 11 2026 00:00:00 GMT+0300 (East Africa Time)": true
+        }
+    },
+    "recentBookmarks": [
+        {
+            "dissertation_id": 24,
+            "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+            "abstract": "The Law Development Centre Act establishes the legal framework for the training and development of legal professionals in Uganda. This study examines the role of the Act in shaping the standards of legal education and ensuring the competence of advocates entering the legal profession. It explores how the institution contributes to bridging the gap between academic legal studies and practical application through professional courses such as the Bar Course. The research analyzes the structure, mandates, and functions of the Law Development Centre as outlined in the Act. It further evaluates the effectiveness of the Centre in maintaining quality legal training, discipline, and ethical standards among practitioners. Challenges such as limited capacity, increasing student enrollment, and evolving legal demands are also discussed. The study considers reforms aimed at improving accessibility and efficiency within the institution. Findings suggest that while the Act has played a significant role in strengthening legal education, continuous updates are necessary to align with modern legal practices. The study concludes by recommending policy reforms, increased funding, and technological integration to enhance the Centre’s impact on Uganda’s legal system.",
+            "course": "Bachelor of Laws",
+            "seconds_ago": 154746
+        },
+        {
+            "dissertation_id": 25,
+            "title": "The AI",
+            "abstract": "Artificial Intelligence (AI) continues to evolve at an unprecedented rate, presenting both transformative opportunities and significant risks to humanity. This study explores the dual nature of AI as a driver of economic growth and innovation, while also posing potential existential threats if left unchecked. The research examines how AI technologies are being integrated into critical sectors such as healthcare, finance, and governance, highlighting their benefits in efficiency and decision-making. However, it also raises concerns about loss of human control, ethical dilemmas, and unintended consequences of autonomous systems. The study further investigates the alignment problem, where AI systems may act in ways that do not reflect human values. Through a comprehensive review of current developments, the research emphasizes the importance of regulatory frameworks and global cooperation. It also discusses the role of policymakers, developers, and institutions in ensuring safe AI deployment. Findings suggest that while AI can significantly boost productivity and solve complex problems, insufficient oversight may lead to irreversible outcomes. The study concludes by recommending balanced strategies that promote innovation while mitigating long-term risks.",
+            "course": "Bachelor of Science in Computer Science",
+            "seconds_ago": 233687
+        },
+        {
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "abstract": "This study investigates the effect of board characteristics and audit committee attributes on earnings management practices among listed non-financial firms in Nigeria. It examines how factors such as board size, independence, expertise, and frequency of meetings influence the quality of financial reporting. The research further explores the role of audit committees in monitoring management behavior and ensuring transparency in financial disclosures. Using panel data collected from annual reports of selected firms, the study analyzes the relationship between corporate governance structures and the likelihood of earnings manipulation. The findings reveal that stronger governance mechanisms, particularly independent and financially literate audit committees, significantly reduce earnings management. However, weaknesses in enforcement and regulatory oversight may limit their effectiveness. The study also highlights the importance of aligning corporate governance practices with international standards to improve investor confidence. It concludes that enhancing board effectiveness and strengthening audit committees are critical in promoting accountability and reducing financial misreporting. Recommendations include policy reforms, improved regulatory supervision, and continuous training for board members.",
+            "course": "Bachelor of Accounting and Finance",
+            "seconds_ago": 233764
+        }
+    ],
+    "trending": [
+        {
+            "dissertation_id": 25,
+            "title": "The AI",
+            "views": 2,
+            "downloads": 1
+        },
+        {
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "views": 1,
+            "downloads": 1
+        },
+        {
+            "dissertation_id": 26,
+            "title": "The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author",
+            "views": 1,
+            "downloads": 1
+        },
+        {
+            "dissertation_id": 22,
+            "title": "Government by",
+            "views": 0,
+            "downloads": 0
+        },
+        {
+            "dissertation_id": 24,
+            "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+            "views": 0,
+            "downloads": 0
+        }
+    ]
+}
+
+now this div will contain three cards.
+    "downloads": {
+        "total": 3,
+        "this_month": 3
+    },
+    "bookmarks": {
+        "total": 3,
+        "latest": "2026-04-11T09:07:24.000Z"
+    },
+    "views": {
+        "this_month": 3
+    },
+
+structure will be icon on the top left, then this month or latest on the top right
+Total Downloads or Bookmarks or Recently Viewed titles 
+the Large Figure below. 
+
+Will contain 2 divs.
+On the Right will be Recent Downloads there will be 5 max. Dont forget the "View all" link
+    "recentDownloads": [
+        {
+            "dissertation_id": 26,
+            "title": "The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author",
+            "author_name": "Peter S. Lubega",
+            "pages": 23,
+            "year": 2026,
+            "course": "Bachelor of Agriculture"
+        },
+        {
+            "dissertation_id": 25,
+            "title": "The AI",
+            "author_name": "John K. Mensah",
+            "pages": 17,
+            "year": 2026,
+            "course": "Bachelor of Science in Computer Science"
+        },
+        {
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "author_name": "Chinedu O. Adeyemi",
+            "pages": 19,
+            "year": 2026,
+            "course": "Bachelor of Accounting and Finance"
+        }
+    ],
+
+On the right will have personal Statistics
+heading "Most Downloaded Dissertation"
+    "topDissertation": {
+        "dissertation_id": 23,
+        "title": "Effect of Board and Audit Committee Attributes on Earnings",
+        "downloads": 1,
+        "percentage": "33.33"
+    },
+below it will be 
+Day Calender for the past 7 days the user was active:
+    "activity": {
+        "days_active": 2,
+        "raw": {
+            "Fri Apr 10 2026 00:00:00 GMT+0300 (East Africa Time)": true,
+            "Sat Apr 11 2026 00:00:00 GMT+0300 (East Africa Time)": true
+        }
+    },
+    Find a way to design the layout as well.
+
+Below will have 2 divs as well
+One will display the Saved Dissertations. 5 max.
+Dont forget a "View all" link
+Display all cards And let each card redirect to /students/dissertations/[id] with [id] being the dissertation id.
+Display part of the abstract and not the full thing.
+    "recentBookmarks": [
+        {
+            "dissertation_id": 24,
+            "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+            "abstract": "The Law Development Centre Act establishes the legal framework for the training and development of legal professionals in Uganda. This study examines the role of the Act in shaping the standards of legal education and ensuring the competence of advocates entering the legal profession. It explores how the institution contributes to bridging the gap between academic legal studies and practical application through professional courses such as the Bar Course. The research analyzes the structure, mandates, and functions of the Law Development Centre as outlined in the Act. It further evaluates the effectiveness of the Centre in maintaining quality legal training, discipline, and ethical standards among practitioners. Challenges such as limited capacity, increasing student enrollment, and evolving legal demands are also discussed. The study considers reforms aimed at improving accessibility and efficiency within the institution. Findings suggest that while the Act has played a significant role in strengthening legal education, continuous updates are necessary to align with modern legal practices. The study concludes by recommending policy reforms, increased funding, and technological integration to enhance the Centre’s impact on Uganda’s legal system.",
+            "course": "Bachelor of Laws",
+            "seconds_ago": 154746
+        },
+        {
+            "dissertation_id": 25,
+            "title": "The AI",
+            "abstract": "Artificial Intelligence (AI) continues to evolve at an unprecedented rate, presenting both transformative opportunities and significant risks to humanity. This study explores the dual nature of AI as a driver of economic growth and innovation, while also posing potential existential threats if left unchecked. The research examines how AI technologies are being integrated into critical sectors such as healthcare, finance, and governance, highlighting their benefits in efficiency and decision-making. However, it also raises concerns about loss of human control, ethical dilemmas, and unintended consequences of autonomous systems. The study further investigates the alignment problem, where AI systems may act in ways that do not reflect human values. Through a comprehensive review of current developments, the research emphasizes the importance of regulatory frameworks and global cooperation. It also discusses the role of policymakers, developers, and institutions in ensuring safe AI deployment. Findings suggest that while AI can significantly boost productivity and solve complex problems, insufficient oversight may lead to irreversible outcomes. The study concludes by recommending balanced strategies that promote innovation while mitigating long-term risks.",
+            "course": "Bachelor of Science in Computer Science",
+            "seconds_ago": 233687
+        },
+        {
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "abstract": "This study investigates the effect of board characteristics and audit committee attributes on earnings management practices among listed non-financial firms in Nigeria. It examines how factors such as board size, independence, expertise, and frequency of meetings influence the quality of financial reporting. The research further explores the role of audit committees in monitoring management behavior and ensuring transparency in financial disclosures. Using panel data collected from annual reports of selected firms, the study analyzes the relationship between corporate governance structures and the likelihood of earnings manipulation. The findings reveal that stronger governance mechanisms, particularly independent and financially literate audit committees, significantly reduce earnings management. However, weaknesses in enforcement and regulatory oversight may limit their effectiveness. The study also highlights the importance of aligning corporate governance practices with international standards to improve investor confidence. It concludes that enhancing board effectiveness and strengthening audit committees are critical in promoting accountability and reducing financial misreporting. Recommendations include policy reforms, improved regulatory supervision, and continuous training for board members.",
+            "course": "Bachelor of Accounting and Finance",
+            "seconds_ago": 233764
+        }
+    ],
+
+On the right will be 
+Trending this week
+    "trending": [
+        {
+            "dissertation_id": 25,
+            "title": "The AI",
+            "views": 2,
+            "downloads": 1
+        },
+        {
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "views": 1,
+            "downloads": 1
+        },
+        {
+            "dissertation_id": 26,
+            "title": "The Impact of the Uganda Agriculture Insurance Subsidy (UAIS) Scheme on the Agricultural Sector Author",
+            "views": 1,
+            "downloads": 1
+        },
+        {
+            "dissertation_id": 22,
+            "title": "Government by",
+            "views": 0,
+            "downloads": 0
+        },
+        {
+            "dissertation_id": 24,
+            "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+            "views": 0,
+            "downloads": 0
+        }
+    ]
