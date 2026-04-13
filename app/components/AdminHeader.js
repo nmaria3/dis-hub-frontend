@@ -70,7 +70,7 @@ export default function AdminHeader() {
             )}
           </div>
 
-          <Link href="#" className="hover:text-[#3772FF] transition">
+          <Link href="/admin/analytics" className="hover:text-[#3772FF] transition">
             Analytics
           </Link>
 
@@ -149,7 +149,7 @@ export default function AdminHeader() {
             )}
           </div>
 
-          <Link href="#" className="hover:text-[#3772FF]">
+          <Link href="/admin/analytics" className="hover:text-[#3772FF]">
             Analytics
           </Link>
 
