@@ -1074,3 +1074,104 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
 then Format the Citations into three formats. Its already a JSON.
+
+
+_________________________________________________________________________________________________________
+
+Important information (STARTING GUIDE)
+Primary color = #3772FF
+Secondary color = #EFEFEF
+The body will have a background color of #EFEFEF
+The important stuff like buttons and other will have a color of #3772FF
+Text will be black or its equivalent
+These colors must be manually set.
+Ensure that everything including the text is responsive on all screen (mobile first.)
+
+Create a downloads history page:
+h1 with text "Download History"
+paragraph with text "Manage and quickly re-download your academic resources." and on the far left Number of items "{3} items"
+
+Card holding the Title, Author, Date Downloaded and Action being a download icon when clicked will display the download url to the console.
+
+Make GET http://localhost:5000/student/downloads
+
+Response 
+{
+    "success": true,
+    "count": 2,
+    "data": [
+        {
+            "title": "The AI",
+            "author": "John K. Mensah",
+            "downloaded_at": "2026-04-11T05:02:25.000Z",
+            "file_download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf"
+        },
+        {
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "author": "Chinedu O. Adeyemi",
+            "downloaded_at": "2026-04-10T10:40:53.000Z",
+            "file_download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf"
+        }
+    ]
+}
+
+Dont forget to handle errors.
+You are Allowed to be creative with the design and layout.
+
+_________________________________________________________________________________________________________
+
+You are gonna do the same for the bookmarks page.
+Make a get request to http://localhost:5000/student/bookmarks
+Response
+{
+    "success": true,
+    "count": 3,
+    "data": [
+        {
+            "bookmark_id": 4,
+            "dissertation_id": 24,
+            "title": "The Law Development Centre Act and Its Role in Legal Education and Professional Training in Uganda Author",
+            "author": "Brenda A. Nakato",
+            "year": 2026,
+            "abstract": "The Law Development Centre Act establishes the legal framework for the training and development of legal professionals in Uganda. This study examines the role of the Act in shaping the standards of legal education and ensuring the competence of advocates entering the legal profession. It explores how the institution contributes to bridging the gap between academic legal studies and practical application through professional courses such as the Bar Course. The research analyzes the structure, mandates, and functions of the Law Development Centre as outlined in the Act. It further evaluates the effectiveness of the Centre in maintaining quality legal training, discipline, and ethical standards among practitioners. Challenges such as limited capacity, increasing student enrollment, and evolving legal demands are also discussed. The study considers reforms aimed at improving accessibility and efficiency within the institution. Findings suggest that while the Act has played a significant role in strengthening legal education, continuous updates are necessary to align with modern legal practices. The study concludes by recommending policy reforms, increased funding, and technological integration to enhance the Centre’s impact on Uganda’s legal system.",
+            "image_url": "https://i.pinimg.com/736x/e4/7f/a1/e47fa1185f0fd036cba8f8dee24f67ae.jpg",
+            "file_download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:Law_Development_Centre_Act-1970-21/v1775720734/Dissertations/Law_Development_Centre_Act-1970-21.pdf",
+            "course": "Bachelor of Laws",
+            "created_at": "2026-04-11T09:07:24.000Z"
+        },
+        {
+            "bookmark_id": 3,
+            "dissertation_id": 25,
+            "title": "The AI",
+            "author": "John K. Mensah",
+            "year": 2026,
+            "abstract": "Artificial Intelligence (AI) continues to evolve at an unprecedented rate, presenting both transformative opportunities and significant risks to humanity. This study explores the dual nature of AI as a driver of economic growth and innovation, while also posing potential existential threats if left unchecked. The research examines how AI technologies are being integrated into critical sectors such as healthcare, finance, and governance, highlighting their benefits in efficiency and decision-making. However, it also raises concerns about loss of human control, ethical dilemmas, and unintended consequences of autonomous systems. The study further investigates the alignment problem, where AI systems may act in ways that do not reflect human values. Through a comprehensive review of current developments, the research emphasizes the importance of regulatory frameworks and global cooperation. It also discusses the role of policymakers, developers, and institutions in ensuring safe AI deployment. Findings suggest that while AI can significantly boost productivity and solve complex problems, insufficient oversight may lead to irreversible outcomes. The study concludes by recommending balanced strategies that promote innovation while mitigating long-term risks.",
+            "image_url": "https://i.pinimg.com/736x/62/0d/1e/620d1e45864bec4a2bf0a79dd001696d.jpg",
+            "file_download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk/v1775720740/Dissertations/The_AI_Dilemma__Growth_versus_Existential_Risk_-_existentialrisk.pdf",
+            "course": "Bachelor of Science in Computer Science",
+            "created_at": "2026-04-10T11:11:43.000Z"
+        },
+        {
+            "bookmark_id": 2,
+            "dissertation_id": 23,
+            "title": "Effect of Board and Audit Committee Attributes on Earnings",
+            "author": "Chinedu O. Adeyemi",
+            "year": 2026,
+            "abstract": "This study investigates the effect of board characteristics and audit committee attributes on earnings management practices among listed non-financial firms in Nigeria. It examines how factors such as board size, independence, expertise, and frequency of meetings influence the quality of financial reporting. The research further explores the role of audit committees in monitoring management behavior and ensuring transparency in financial disclosures. Using panel data collected from annual reports of selected firms, the study analyzes the relationship between corporate governance structures and the likelihood of earnings manipulation. The findings reveal that stronger governance mechanisms, particularly independent and financially literate audit committees, significantly reduce earnings management. However, weaknesses in enforcement and regulatory oversight may limit their effectiveness. The study also highlights the importance of aligning corporate governance practices with international standards to improve investor confidence. It concludes that enhancing board effectiveness and strengthening audit committees are critical in promoting accountability and reducing financial misreporting. Recommendations include policy reforms, improved regulatory supervision, and continuous training for board members.",
+            "image_url": "https://i.pinimg.com/736x/fe/3b/d5/fe3bd50410c3a940ad9fcb5909e57c63.jpg",
+            "file_download_url": "https://res.cloudinary.com/dkqxz5dql/image/upload/fl_attachment:Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance/v1775720729/Dissertations/Effect_of_Board_and_Audit_Committee_Attributes_on_Earnings_Management_-_Accounting_and_Finance.pdf",
+            "course": "Bachelor of Accounting and Finance",
+            "created_at": "2026-04-10T11:10:26.000Z"
+        }
+    ]
+}
+You are to display the h1 with text "Saved Dissertations"
+paragraph with text "Manage your collection of academic research and saved papers" and on the far left will be the number of items
+
+Whats different is that we change the card structure?
+On the left will be an image and course
+On the right will be 
+title
+author, year
+abstract [Part of it]
+View Button to use the dissertation and send the user to the view page,Download button as well.

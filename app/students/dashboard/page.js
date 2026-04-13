@@ -2,12 +2,14 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 export default async function Dashboard() {
-  const { userId } = await auth();
+  const { userId, getToken } = await auth();
 
   // 🚫 If NOT signed in → redirect
   if (!userId) {
     redirect("/");
   }
+
+  const token = await getToken();
 
   return (
     <div className="p-10">
@@ -15,6 +17,7 @@ export default async function Dashboard() {
       <p className="mt-4 font-body">
         Welcome to your dashboard.
       </p>
+      <p>{token}</p>
     </div>
   );
 }
