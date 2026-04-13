@@ -20,10 +20,10 @@ export default function StudentDashboard() {
   const [loading, setLoading] = useState(true);
   const { getToken, isSignedIn, isLoaded, } = useAuth();
   const router = useRouter();
-  const user = useUser();
+  const { user } = useUser();
 
   useEffect(() => {
-    if(!isSignedIn)
+    if(!isSignedIn || !isLoaded)
     {
       console.log("User not logged in");
       return;
@@ -46,7 +46,7 @@ export default function StudentDashboard() {
       }
     };
     fetchAnalytics();
-  }, [isSignedIn]);
+  }, [isSignedIn, isLoaded]);
 
   const timeAgo = (dateString) => {
     const now = new Date();
@@ -86,7 +86,7 @@ export default function StudentDashboard() {
         {/* Welcome Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <h1 className="text-3xl md:text-4xl font-black">Welcome back, {user?.firstName}😄👋</h1>
+            <h1 className="text-3xl md:text-4xl font-black">Welcome back, {user?.firstName || "Student"}😄👋</h1>
             <p className="text-gray-500 mt-1">Continue your research journey and explore new academic frontiers</p>
           </div>
           <Link href="/browse">
@@ -163,17 +163,47 @@ export default function StudentDashboard() {
               <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
                 <FontAwesomeIcon icon={faCalendarAlt} className="text-[#3772FF]" /> Activity (Past 7 Days)
               </h3>
-              <div className="flex justify-between gap-2">
-                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, i) => {
-                   const isActive = i === 4 || i === 5; // Simulating active days based on API
-                   return (
-                     <div key={i} className="flex flex-col items-center gap-2">
-                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs ${isActive ? 'bg-[#3772FF] text-white shadow-md' : 'bg-[#EFEFEF] text-gray-400'}`}>
-                         {isActive ? '✓' : ''}
-                       </div>
-                       <span className="text-[10px] font-bold text-gray-400">{day}</span>
-                     </div>
-                   );
+              <div className="flex justify-between items-center gap-2">
+                {[...Array(7)].map((_, i) => {
+                  // 1. Calculate the date for this slot (i=0 is 6 days ago, i=6 is today)
+                  const dayDate = new Date();
+                  dayDate.setDate(dayDate.getDate() - (6 - i));
+                  
+                  // 2. Format the Day Initial (M, T, W...)
+                  const dayInitial = dayDate.toLocaleDateString('en-US', { weekday: 'narrow' });
+                  
+                  // 3. Format the date string to match your JSON keys (e.g., "Mon Apr 13 2026")
+                  const dateString = dayDate.toDateString(); 
+                  
+                  // 4. Check if this date exists in your activity.raw object
+                  const isActive = Object.keys(data.activity.raw).some(key => 
+                    key.includes(dateString)
+                  );
+
+                  // 5. Check if this specific slot is "Today" to give it a highlight
+                  const isToday = new Date().toDateString() === dateString;
+
+                  return (
+                    <div key={i} className="flex flex-col items-center gap-2">
+                      {/* The Activity Box */}
+                      <div 
+                        className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs transition-all duration-300 ${
+                          isActive 
+                            ? 'bg-[#3772FF] text-white shadow-lg shadow-blue-100 scale-105' 
+                            : 'bg-[#EFEFEF] text-gray-400 border border-gray-200'
+                        } ${isToday ? 'ring-2 ring-[#3772FF] ring-offset-2' : ''}`}
+                      >
+                        {isActive ? '✓' : ''}
+                      </div>
+                      
+                      {/* The Day Label */}
+                      <span className={`text-[10px] font-black uppercase tracking-tighter ${
+                        isToday ? 'text-[#3772FF]' : 'text-gray-400'
+                      }`}>
+                        {isToday ? 'Today' : dayInitial}
+                      </span>
+                    </div>
+                  );
                 })}
               </div>
               <p className="mt-4 text-xs font-bold text-gray-500 italic text-center">Active for {data.activity.days_active} days this week</p>

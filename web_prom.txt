@@ -1427,3 +1427,47 @@ Trending this week
             "downloads": 0
         }
     ]
+
+User: {"isLoaded":true,"isSignedIn":true,"user":
+{
+    "id":"user_3C4wZiwJj98OsY96qpeYhDk3UqB",
+    "pathRoot":"/me",
+    "externalId":null,
+    "username":null,
+    "emailAddresses":[{
+            "id":"idn_3C4wZlyJZQirqh390cSQewN9VbI",
+            "pathRoot":"/me/email_addresses",
+            "emailAddress":"nankinga.maria@stud.umu.ac.ug",
+            "matchesSsoConnection":false,
+            "linkedTo":[{
+                    "id":"idn_3C4wZjiTQu9iFKhKlHkF5QCecps",
+                    "pathRoot":"",
+                    "type":"oauth_google"
+                }],
+            "verification": {
+                    "pathRoot":"",
+                    "status":"verified",
+                    "strategy":"from_oauth_google",
+                    "nonce":null,
+                    "message":null,
+                    "externalVerificationRedirectURL":null,
+                    "attempts":null,
+                    "expireAt":"2026-04-13T12:25:46.168Z","error":null
+                }
+    }],
+    "phoneNumbers":[],
+    "web3Wallets":[],
+    "externalAccounts":[{
+        "id":"eac_3C4wZnYxItmUXiTgtqmMFIwEjs7",
+        "pathRoot":"/me/external_accounts",
+        "identificationId":"idn_3C4wZjiTQu9iFKhKlHkF5QCecps",
+        "provider":"google",
+        "providerUserId":"113869909695087323691",
+        "emailAddress":"nankinga.maria@stud.umu.ac.ug",
+        "approvedScopes":"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid profile",
+        "firstName":"Nankinga","lastName":"Maria","imageUrl":"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMRzJYeFJpTFZkMGl3RzB5aTJ2bWFzcVYtSFJMbmdoOU9QMGM2ajZjOVBGdEJLSVVvPXMxMDAwLWMiLCJzIjoieEJRRnpkQkdoRTBINWRoYjlnTEp4VFZESlBCY3dVY05rekpDc04yVGs1YyJ9","username":"","phoneNumber":"","publicMetadata":{},"label":null,"verification":{"pathRoot":"","status":"verified","strategy":"oauth_google","nonce":null,"message":null,"externalVerificationRedirectURL":null,"attempts":null,"expireAt":"2026-04-08T14:33:21.527Z","error":null}}],"enterpriseAccounts":[],"passkeys":[],"organizationMemberships":[],"passwordEnabled":false,"firstName":"Nankinga","lastName":"Maria","fullName":"Nankinga Maria","primaryEmailAddressId":"idn_3C4wZlyJZQirqh390cSQewN9VbI","primaryEmailAddress":{"id":"idn_3C4wZlyJZQirqh390cSQewN9VbI","pathRoot":"/me/email_addresses","emailAddress":"nankinga.maria@stud.umu.ac.ug","matchesSsoConnection":false,"linkedTo":[{"id":"idn_3C4wZjiTQu9iFKhKlHkF5QCecps","pathRoot":"","type":"oauth_google"}],"verification":{"pathRoot":"","status":"verified","strategy":"from_oauth_google","nonce":null,"message":null,"externalVerificationRedirectURL":null,"attempts":null,"expireAt":"2026-04-13T12:25:46.168Z","error":null}},"primaryPhoneNumberId":null,"primaryPhoneNumber":null,"primaryWeb3WalletId":null,"primaryWeb3Wallet":null,"imageUrl":"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zQzR3Wmk1eU9XbG9VRWlQVVdRZzdIc2NFbXgifQ","hasImage":true,"twoFactorEnabled":false,"totpEnabled":false,"backupCodeEnabled":false,"publicMetadata":{},"unsafeMetadata":{},"createOrganizationEnabled":true,"createOrganizationsLimit":null,"deleteSelfEnabled":false,"lastSignInAt":"2026-04-11T11:04:42.665Z","legalAcceptedAt":null,"updatedAt":"2026-04-11T11:04:42.748Z","createdAt":"2026-04-08T14:23:27.591Z","cachedSessionsWithActivities":null}
+}
+
+
+​
+
