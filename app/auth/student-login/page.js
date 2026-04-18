@@ -27,7 +27,7 @@ export default function StudentLogin() {
       const delay = Math.floor(Math.random() * 2000) + 3000;
       await new Promise((resolve) => setTimeout(resolve, delay));
 
-      const res = await fetch("http://localhost:5000/auth/sign-in", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/sign-in`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export default function StudentLogin() {
       if (data.message === "User not found. Please sign up first.") {
           try {
             // 🔥 call delete endpoint
-            await fetch("http://localhost:5000/delete-user", {
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/delete-user`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

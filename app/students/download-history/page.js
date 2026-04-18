@@ -14,7 +14,7 @@ export default function DownloadHistory() {
     const fetchHistory = async () => {
         const token = await getToken();
       try {
-        const response = await fetch("http://localhost:5000/student/downloads", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/downloads`, {
             headers : {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json"

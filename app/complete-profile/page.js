@@ -53,7 +53,7 @@ export default function CompleteProfile() {
 
       try {
         const token = await getToken();
-        const res = await fetch("http://localhost:5000/auth/sign-up", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/sign-up`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -118,7 +118,7 @@ export default function CompleteProfile() {
 
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/auth/complete-profile-data");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/complete-profile-data`);
         if (!res.ok) throw new Error("Failed to fetch profile data");
         const result = await res.json();
         setCampusesData(result.data);
@@ -178,7 +178,7 @@ export default function CompleteProfile() {
     if (!confirmSubmit) return;
 
     try {
-      const res = await fetch("http://localhost:5000/auth/complete-profile", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/complete-profile`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(finalData),

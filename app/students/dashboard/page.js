@@ -31,7 +31,7 @@ export default function StudentDashboard() {
     const fetchAnalytics = async () => {
       try {
         const token = await getToken();
-        const res = await fetch("http://localhost:5000/student/dashboard/analytics", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/dashboard/analytics`, {
           headers : {
               Authorization: `Bearer ${token}`,
               "Content-Type": "application/json"

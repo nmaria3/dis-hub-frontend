@@ -14,7 +14,7 @@ export default function NotificationBell() {
     try {
       const token = await getToken();
 
-      const res = await fetch("http://localhost:5000/admin/notifications/unread-count", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/notifications/unread-count`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

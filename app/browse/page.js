@@ -25,7 +25,7 @@ export default function BrowsePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/student/get-dissertations");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/get-dissertations`);
         const result = await response.json();
         setDissertations(result.data);
         setFilteredData(result.data);
@@ -81,7 +81,7 @@ export default function BrowsePage() {
     const token = await getToken();
 
     const res = await fetch(
-        "http://localhost:5000/student/track/download",
+        `${process.env.NEXT_PUBLIC_API_URL}/student/track/download`,
         {
             method: "POST",
             headers: {

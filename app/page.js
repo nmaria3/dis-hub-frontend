@@ -21,7 +21,7 @@ export default function Home() {
 
   //       console.log("Token:", token);
 
-  //       const res = await fetch("http://localhost:5000/protected", {
+  //       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/protected`, {
   //         method: "GET",
   //         headers: {
   //           Authorization: `Bearer ${token}`, // 🔥 send token

@@ -22,7 +22,7 @@ import { useAuth } from '@clerk/nextjs';
     const fetchBookmarks = async () => {
       try {
         const token = await getToken();
-        const response = await fetch("http://localhost:5000/student/bookmarks", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/bookmarks`, {
             headers : {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json"

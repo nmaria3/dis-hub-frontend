@@ -45,7 +45,7 @@ export default function EditDissertation() {
       try {
         const token = await getToken();
 
-        const res = await fetch(`http://localhost:5000/admin/dissertations/${id}`,
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/dissertations/${id}`,
             {
                 headers: { Authorization: `Bearer ${token}` },
             }
@@ -115,7 +115,7 @@ export default function EditDissertation() {
 
     try {
         const res = await fetch(
-        `http://localhost:5000/admin/dissertations/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/dissertations/${id}`,
         {
             method: "PUT",
             headers: {

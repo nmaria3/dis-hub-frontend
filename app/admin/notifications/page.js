@@ -19,7 +19,7 @@ export default function NotificationsPage() {
     const fetchNotifications = async () => {
       const token = await getToken();
 
-      const res = await fetch("http://localhost:5000/admin/notifications", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/notifications`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +30,7 @@ export default function NotificationsPage() {
       setFiltered(data.data || []);
 
       // ✅ Mark as read immediately
-      await fetch("http://localhost:5000/admin/notifications/read-all", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/notifications/read-all`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

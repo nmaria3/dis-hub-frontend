@@ -26,7 +26,7 @@ export default function AdminDashboard() {
         const token = await getToken();
 
         const response = await fetch(
-          "http://localhost:5000/admin/dashboard/analytics",
+          `${process.env.NEXT_PUBLIC_API_URL}/admin/dashboard/analytics`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

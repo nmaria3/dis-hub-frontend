@@ -27,7 +27,7 @@ export default function AdminAnalytics() {
     setLoading(true);
     try {
       const token = await getToken();
-      const response = await fetch("http://localhost:5000/admin/analytics/advanced", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/analytics/advanced`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -25,7 +25,7 @@ export default function StudentsDirectory() {
       const token = await getToken();
 
       const res = await fetch(
-        "http://localhost:5000/admin/get-student/activity",
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/get-student/activity`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ export default function StudentsDirectory() {
 
             const token = await getToken();
 
-            const res = await fetch("http://localhost:5000/admin/delete-user", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/delete-user`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

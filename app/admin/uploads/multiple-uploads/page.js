@@ -23,7 +23,7 @@ export default function MultipleUploads() {
   const fetchFiles = async () => {
     const token = await getToken();
 
-    const res = await fetch("http://localhost:5000/admin/uploads", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/uploads`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -50,7 +50,7 @@ export default function MultipleUploads() {
       try {
         const token = await getToken();
 
-        const res = await fetch("http://localhost:5000/admin/upload-status", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/upload-status`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -123,7 +123,7 @@ export default function MultipleUploads() {
     const form = new FormData();
     files.forEach((file) => form.append("files", file));
 
-    const res = await fetch("http://localhost:5000/admin/multiple-upload", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/multiple-upload`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: form,
@@ -142,7 +142,7 @@ export default function MultipleUploads() {
   const handleDelete = async (filename) => {
     const token = await getToken();
 
-    await fetch(`http://localhost:5000/admin/uploads/${filename}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/uploads/${filename}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -158,7 +158,7 @@ export default function MultipleUploads() {
       // Implement your publish logic here (send to DB, Cloudinary, etc.)
     try {
       const token = await getToken();
-      const res = await fetch("http://localhost:5000/admin/publish", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/publish`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });

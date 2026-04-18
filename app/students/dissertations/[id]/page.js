@@ -28,7 +28,7 @@ export default function DissertationViewPage() {
     const fetchAllData = async () => {
       try {
         // Fetching Dissertation Details
-        const detailsRes = await fetch(`http://localhost:5000/student/dissertation/${id}`,{
+        const detailsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/dissertation/${id}`,{
             headers: {
                 Authorization: `Bearer ${await getToken()}`
             }
@@ -36,7 +36,7 @@ export default function DissertationViewPage() {
         const detailsJson = await detailsRes.json();
         
         // Fetching Stats
-        const statsRes = await fetch(`http://localhost:5000/student/dissertation/${id}/stats`,{
+        const statsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/dissertation/${id}/stats`,{
             headers: {
                 Authorization: `Bearer ${await getToken()}`
             }
@@ -47,7 +47,7 @@ export default function DissertationViewPage() {
             const token = await getToken();
 
             const res = await fetch(
-                "http://localhost:5000/student/track/view",
+                `${process.env.NEXT_PUBLIC_API_URL}/student/track/view`,
                 {
                     method: "POST",
                     headers: {
@@ -68,7 +68,7 @@ export default function DissertationViewPage() {
             try {
                 const token = await getToken();
     
-                const res = await fetch(`http://localhost:5000/student/bookmark/${detailsJson.dissertation.id}`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/bookmark/${detailsJson.dissertation.id}`, {
                     headers: {
                     Authorization: `Bearer ${token}`
                     }
@@ -131,7 +131,7 @@ export default function DissertationViewPage() {
         const token = await getToken();
 
         const res = await fetch(
-            "http://localhost:5000/student/track/download",
+            `${process.env.NEXT_PUBLIC_API_URL}/student/track/download`,
             {
                 method: "POST",
                 headers: {
@@ -162,7 +162,7 @@ export default function DissertationViewPage() {
     try {
         const token = await getToken();
 
-        const res = await fetch("http://localhost:5000/student/track/bookmark", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/track/bookmark`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

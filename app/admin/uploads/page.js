@@ -151,7 +151,7 @@ const handlePublish = async () => {
     form.append("license", formData.license);
     form.append("image_url", selectedImage?.image_url);
 
-    const res = await fetch("http://localhost:5000/admin/upload-dissertation", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/upload-dissertation`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`, // ✅ fresh token

@@ -45,7 +45,7 @@ export default function AppWrapper({ children }) {
     async function getActivity(){
       const token = await getToken();
 
-      const res = await fetch("http://localhost:5000/student/api/activity", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/student/api/activity`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + token,
@@ -85,7 +85,7 @@ export default function AppWrapper({ children }) {
 
     async function checkProfile() {
       try {
-        const res = await fetch("http://localhost:5000/auth/check-profile", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/check-profile`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

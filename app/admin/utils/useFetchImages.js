@@ -25,7 +25,7 @@ export function useFetchImages() {
 
         if (!token) return;
 
-        const res = await fetch("http://localhost:5000/admin/get-images", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/get-images`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -40,7 +40,7 @@ export function useFetchImages() {
 
     async function fetchUniversityData() {
       try {
-        const res = await fetch("http://localhost:5000/auth/complete-profile-data");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/complete-profile-data`);
 
         if (!res.ok) {
           throw new Error("Failed to fetch university data");

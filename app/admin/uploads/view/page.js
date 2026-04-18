@@ -23,7 +23,7 @@ export default function ManageDissertations() {
     try {
       const token = await getToken();
 
-      const res = await fetch("http://localhost:5000/admin/get-dissertations", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/get-dissertations`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -106,7 +106,7 @@ export default function ManageDissertations() {
       const token = await getToken();
 
       const res = await fetch(
-        `http://localhost:5000/admin/delete-dissertation/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/delete-dissertation/${id}`,
         {
           method: "DELETE",
           headers: {
