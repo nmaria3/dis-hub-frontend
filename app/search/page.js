@@ -119,7 +119,7 @@ export default function BrowsePage() {
     <div className="min-h-screen bg-[#EFEFEF] text-black p-4 md:p-8">
       {/* Header */}
       <header className="mb-8">
-        <h1 className="text-4xl font-bold text-[#3772FF]">Browse Dissertations</h1>
+        <h1 className="text-4xl font-bold text-[#D00000]">Browse Dissertations</h1>
         <p className="text-gray-600 mt-2">Explore academic research and findings from our top students.</p>
       </header>
 
@@ -127,12 +127,12 @@ export default function BrowsePage() {
         {/* Sidebar Filters */}
         <aside className="w-full lg:w-1/4 space-y-6">
           <div className="space-y-4">
-            <h2 className="font-semibold text-lg border-b border-[#3772FF] pb-2">Search & Filters</h2>
+            <h2 className="font-semibold text-lg border-b border-[#D00000] pb-2">Search & Filters</h2>
             
             <input 
               type="text" 
               placeholder="Search title or author..."
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-[#3772FF] outline-none"
+              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-[#D00000] outline-none"
               onChange={(e) => setSearch(e.target.value)}
             />
 
@@ -171,7 +171,7 @@ export default function BrowsePage() {
         </aside>
 
         {/* Vertical/Horizontal Line */}
-        <div className="border-t lg:border-l border-[#3772FF] opacity-30"></div>
+        <div className="border-t lg:border-l border-[#D00000] opacity-30"></div>
 
         {/* Card Grid */}
         <main className="flex-1">
@@ -194,7 +194,7 @@ export default function BrowsePage() {
                   <div className="p-4 flex flex-col justify-between flex-1">
                     <div>
                       <div className="flex justify-between items-start mb-1">
-                        <span className="text-xs font-bold text-[#3772FF] uppercase">{item.academic.course?.name || "General"}</span>
+                        <span className="text-xs font-bold text-[#D00000] uppercase">{item.academic.course?.name || "General"}</span>
                         <span className="text-xs text-gray-400">{item.year}</span>
                       </div>
                       <h3 className="font-bold text-lg line-clamp-1">{item.title}</h3>
@@ -208,13 +208,13 @@ export default function BrowsePage() {
                     <div className="mt-4 flex gap-2">
                       <button 
                         onClick={() => handleView(item.id)}
-                        className="flex-1 bg-[#3772FF] text-white py-2 px-4 rounded text-sm font-semibold hover:bg-blue-700 transition-colors"
+                        className="flex-1 bg-[#D00000] text-white py-2 px-4 rounded text-sm font-semibold hover:bg-[#D00000]/70 transition-colors"
                       >
                         View
                       </button>
                       <button 
                         onClick={() => handleDownload(item.id, item.file)}
-                        className="flex-1 border border-[#3772FF] text-[#3772FF] py-2 px-4 rounded text-sm font-semibold hover:bg-[#3772FF] hover:text-white transition-all"
+                        className="flex-1 border border-[#D00000] text-[#D00000] py-2 px-4 rounded text-sm font-semibold hover:bg-[#D00000] hover:text-white transition-all"
                       >
                         {isSignedIn ? "Download" : "Login to Download"}
                       </button>

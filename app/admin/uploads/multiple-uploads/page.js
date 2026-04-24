@@ -226,7 +226,7 @@ export default function MultipleUploads() {
 
             <button
               onClick={handleUpload}
-              className="mt-4 w-full py-3 text-white rounded bg-blue-600 hover:bg-blue-700 transition"
+              className="mt-4 w-full py-3 text-white rounded bg-blue-600 hover:bg-[#D00000]/70 transition"
             >
               Upload Selected Files
             </button>
@@ -249,7 +249,7 @@ export default function MultipleUploads() {
               className="h-full transition-all duration-500"
               style={{
                 width: `${progress}%`,
-                backgroundColor: "#3772FF",
+                backgroundColor: "#D00000",
               }}
             ></div>
           </div>

@@ -97,7 +97,7 @@ const spinner = {
   width: "50px",
   height: "50px",
   border: "5px solid #eee",
-  borderTop: "5px solid #3772FF",
+  borderTop: "5px solid #D00000",
   borderRadius: "50%",
   animation: "spin 1s linear infinite",
 };

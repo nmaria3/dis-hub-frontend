@@ -89,7 +89,7 @@ export default function ContactPage() {
             <p><strong>Support:</strong> Mon - Fri, 8:00 AM - 5:00 PM</p>
           </div>
 
-          <div className="mt-6 w-16 h-1 bg-[#3772FF]"></div>
+          <div className="mt-6 w-16 h-1 bg-[#D00000]"></div>
         </div>
 
         {/* FORM */}
@@ -105,7 +105,7 @@ export default function ContactPage() {
             value={form.full_name}
             onChange={handleChange}
             required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3772FF]"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D00000]"
           />
 
           <input
@@ -142,7 +142,7 @@ export default function ContactPage() {
             type="submit"
             disabled={loading}
             className="w-full text-white py-3 rounded-lg font-semibold"
-            style={{ backgroundColor: "#3772FF" }}
+            style={{ backgroundColor: "#D00000" }}
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
@@ -181,7 +181,7 @@ export default function ContactPage() {
                 key={i}
                 className="bg-white p-4 rounded-lg shadow text-center"
             >
-                <h3 className="font-semibold text-[#3772FF] mb-2">
+                <h3 className="font-semibold text-[#D00000] mb-2">
                 {item.title}
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -202,7 +202,7 @@ export default function ContactPage() {
             For urgent academic matters, we recommend contacting your faculty directly.
         </p>
 
-        <div className="mt-4 w-16 h-1 bg-[#3772FF] mx-auto"></div>
+        <div className="mt-4 w-16 h-1 bg-[#D00000] mx-auto"></div>
         </div>
 
         <div className="max-w-5xl mx-auto mt-16 text-center">
@@ -214,7 +214,7 @@ export default function ContactPage() {
             Dis-Hub is proudly built within Uganda Martyrs University, Nkozi — a center of academic excellence committed to research, innovation, and knowledge sharing across Uganda and beyond.
         </p>
 
-        <div className="mt-4 w-16 h-1 bg-[#3772FF] mx-auto"></div>
+        <div className="mt-4 w-16 h-1 bg-[#D00000] mx-auto"></div>
         </div>
     </section>
   );

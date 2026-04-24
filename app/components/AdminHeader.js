@@ -32,8 +32,8 @@ export default function AdminHeader() {
 
         {/* LEFT: LOGO */}
         <div className="flex items-center gap-2" onClick={() => router.push('/')} style={{ cursor: 'pointer' }}>
-          <FontAwesomeIcon icon={faGraduationCap} className="text-[#3772FF] text-2xl" />
-          <h1 className="text-2xl font-heading font-bold text-[#3772FF]">
+          <FontAwesomeIcon icon={faGraduationCap} className="text-[#D00000] text-2xl" />
+          <h1 className="text-2xl font-heading font-bold text-[#D00000]">
             Dis-Hub
           </h1>
         </div>
@@ -42,7 +42,7 @@ export default function AdminHeader() {
         <nav className="hidden md:flex items-center gap-6 font-body text-black">
             {/* ✅ SIGNED IN */}
           <Show when="signed-in">
-            <Link href="/admin/dashboard" className="hover:text-[#3772FF] transition">
+            <Link href="/admin/dashboard" className="hover:text-[#D00000] transition">
               Dashboard
             </Link>
           </Show>
@@ -50,7 +50,7 @@ export default function AdminHeader() {
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:text-[#3772FF] transition flex items-center gap-1"
+              className="hover:text-[#D00000] transition flex items-center gap-1"
             >
               Dissertations <i className="fas fa-chevron-down text-xs"></i>
             </button>
@@ -70,22 +70,22 @@ export default function AdminHeader() {
             )}
           </div>
 
-          <Link href="/admin/analytics" className="hover:text-[#3772FF] transition">
+          <Link href="/admin/analytics" className="hover:text-[#D00000] transition">
             Analytics
           </Link>
 
-          <Link href="/admin/students" className="hover:text-[#3772FF] transition">
+          <Link href="/admin/students" className="hover:text-[#D00000] transition">
             Students
           </Link>
 
           {/* ❌ NOT SIGNED IN */}
           <Show when="signed-out">
             
-              <button onClick={() => router.push("/auth/sign-in")} className="hover:text-[#3772FF] transition">
+              <button onClick={() => router.push("/auth/sign-in")} className="hover:text-[#D00000] transition">
                 Login
               </button>
             
-              <button onClick={() => router.push("/auth/sign-up")} className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md transition hover:bg-white hover:text-[#3772FF]">
+              <button onClick={() => router.push("/auth/sign-up")} className="border border-[#D00000] text-white bg-[#D00000] px-4 py-2 rounded-md transition hover:bg-white hover:text-[#D00000]">
                 Register
               </button>
             
@@ -107,7 +107,7 @@ export default function AdminHeader() {
 
         {/* HAMBURGER */}
         <div
-          className="md:hidden text-2xl text-black cursor-pointer hover:text-[#3772FF]"
+          className="md:hidden text-2xl text-black cursor-pointer hover:text-[#D00000]"
           onClick={() => setIsOpen(!isOpen)}
         >
           <FontAwesomeIcon icon={faBars} />
@@ -120,7 +120,7 @@ export default function AdminHeader() {
 
           {/* ✅ SIGNED IN */}
           <Show when="signed-in">
-            <Link href="/admin/dashboard" className="hover:text-[#3772FF] transition">
+            <Link href="/admin/dashboard" className="hover:text-[#D00000] transition">
               Dashboard
             </Link>
           </Show>
@@ -129,7 +129,7 @@ export default function AdminHeader() {
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:text-[#3772FF] transition flex items-center gap-1"
+              className="hover:text-[#D00000] transition flex items-center gap-1"
             >
               Dissertations <i className="fas fa-chevron-down text-xs"></i>
             </button>
@@ -149,23 +149,23 @@ export default function AdminHeader() {
             )}
           </div>
 
-          <Link href="/admin/analytics" className="hover:text-[#3772FF]">
+          <Link href="/admin/analytics" className="hover:text-[#D00000]">
             Analytics
           </Link>
 
-          <Link href="/admin/students" className="hover:text-[#3772FF]">
+          <Link href="/admin/students" className="hover:text-[#D00000]">
             Students
           </Link>
 
           {/* ❌ NOT SIGNED IN */}
           <Show when="signed-out">
-            <button onClick={() => router.push("/auth/sign-in")} className="text-left hover:text-[#3772FF]">
+            <button onClick={() => router.push("/auth/sign-in")} className="text-left hover:text-[#D00000]">
               Login
             </button>
 
             <button
               onClick={() => router.push("/auth/sign-up")}
-              className="border border-[#3772FF] text-white bg-[#3772FF] px-4 py-2 rounded-md text-left hover:bg-white hover:text-[#3772FF] transition"
+              className="border border-[#D00000] text-white bg-[#D00000] px-4 py-2 rounded-md text-left hover:bg-white hover:text-[#D00000] transition"
             >
               Register
             </button>

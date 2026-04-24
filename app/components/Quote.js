@@ -36,7 +36,7 @@ export default function QuoteOfDay() {
         <div className="relative bg-white/40 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl p-8 md:p-12 text-center overflow-hidden">
 
           {/* DECORATIVE ICON */}
-          <div className="text-[#3772FF] text-4xl mb-6 opacity-80">
+          <div className="text-[#D00000] text-4xl mb-6 opacity-80">
             <FontAwesomeIcon icon={faQuoteLeft} />
           </div>
 
@@ -56,8 +56,8 @@ export default function QuoteOfDay() {
           </p>
 
           {/* GLOW EFFECT */}
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#3772FF] opacity-20 blur-3xl rounded-full"></div>
-          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#3772FF] opacity-20 blur-3xl rounded-full"></div>
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#D00000] opacity-20 blur-3xl rounded-full"></div>
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#D00000] opacity-20 blur-3xl rounded-full"></div>
 
         </div>
 

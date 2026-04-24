@@ -55,13 +55,13 @@ export default function AdminDashboard() {
         <div className="relative w-20 h-20">
           
           {/* Outer Ring */}
-          <div className="absolute inset-0 rounded-full border-4 border-[#3772FF]/20"></div>
+          <div className="absolute inset-0 rounded-full border-4 border-[#D00000]/20"></div>
           
           {/* Animated Ring */}
-          <div className="absolute inset-0 rounded-full border-4 border-[#3772FF] border-t-transparent animate-spin"></div>
+          <div className="absolute inset-0 rounded-full border-4 border-[#D00000] border-t-transparent animate-spin"></div>
           
           {/* Inner Pulse */}
-          <div className="absolute inset-3 rounded-full bg-[#3772FF]/10 animate-pulse"></div>
+          <div className="absolute inset-3 rounded-full bg-[#D00000]/10 animate-pulse"></div>
         
         </div>
 
@@ -87,7 +87,7 @@ export default function AdminDashboard() {
           </p>
         </div>
         <Link href="/admin/uploads">
-          <button className="bg-[#3772FF] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+          <button className="bg-[#D00000] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-[#D00000]/70 transition-all shadow-lg shadow-blue-200">
             <FontAwesomeIcon icon={faPlus} />
             New Dissertation
           </button>
@@ -120,7 +120,7 @@ export default function AdminDashboard() {
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-black flex items-center gap-2">
-              <FontAwesomeIcon icon={faFileUpload} className="text-[#3772FF]" />
+              <FontAwesomeIcon icon={faFileUpload} className="text-[#D00000]" />
               Recent Uploads
             </h2>
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Last 5 items</span>
@@ -131,8 +131,8 @@ export default function AdminDashboard() {
               <div key={doc.id} className="p-4 bg-[#EFEFEF]/50 rounded-xl hover:bg-[#EFEFEF] transition-all group">
                 <div className="flex justify-between items-start gap-4">
                   <div>
-                    <h3 className="font-bold text-sm leading-tight group-hover:text-[#3772FF] line-clamp-1">{doc.title}</h3>
-                    <p className="text-xs text-gray-500 mt-1 font-medium">{doc.author_name} • <span className="text-[#3772FF]">{doc.faculty}</span></p>
+                    <h3 className="font-bold text-sm leading-tight group-hover:text-[#D00000] line-clamp-1">{doc.title}</h3>
+                    <p className="text-xs text-gray-500 mt-1 font-medium">{doc.author_name} • <span className="text-[#D00000]">{doc.faculty}</span></p>
                   </div>
                   <p className="text-[10px] font-black text-gray-400 whitespace-nowrap">
                     {new Date(doc.updated_at).toLocaleDateString()}
@@ -147,7 +147,7 @@ export default function AdminDashboard() {
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-black flex items-center gap-2">
-              <FontAwesomeIcon icon={faUserGraduate} className="text-[#3772FF]" />
+              <FontAwesomeIcon icon={faUserGraduate} className="text-[#D00000]" />
               Latest Scholars
             </h2>
           </div>
@@ -156,7 +156,7 @@ export default function AdminDashboard() {
             {recent.students.map((student) => (
               <div key={student.clerkId} className="py-4 flex items-center justify-between group">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#3772FF] flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 rounded-full bg-[#D00000] flex items-center justify-center text-white font-bold">
                     {student.full_name.charAt(0)}
                   </div>
                   <div>
@@ -182,8 +182,8 @@ export default function AdminDashboard() {
 // Sub-component for Admin Stats
 function AdminStatCard({ label, value, icon }) {
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-6 group hover:border-[#3772FF] transition-all">
-      <div className="w-14 h-14 bg-[#EFEFEF] text-[#3772FF] rounded-2xl flex items-center justify-center text-2xl group-hover:bg-[#3772FF] group-hover:text-white transition-all">
+    <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-6 group hover:border-[#D00000] transition-all">
+      <div className="w-14 h-14 bg-[#EFEFEF] text-[#D00000] rounded-2xl flex items-center justify-center text-2xl group-hover:bg-[#D00000] group-hover:text-white transition-all">
         <FontAwesomeIcon icon={icon} />
       </div>
       <div>

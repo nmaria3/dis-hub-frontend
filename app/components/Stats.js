@@ -15,7 +15,7 @@ const data = [
 
 export default function Stats() {
   return (
-    <section className="bg-[#3772FF] w-full py-16">
+    <section className="bg-[#D00000] w-full py-16">
       <div className="max-w-[90%] mx-auto">
 
         {/* CARDS */}

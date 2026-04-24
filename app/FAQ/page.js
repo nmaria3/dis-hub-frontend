@@ -89,7 +89,7 @@ export default function FAQPage() {
         <input
           type="text"
           placeholder="Search questions..."
-          className="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#3772FF]"
+          className="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#D00000]"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -108,7 +108,7 @@ export default function FAQPage() {
               onClick={() => toggle(index)}
             >
               <div>
-                <p className="text-xs text-[#3772FF] font-semibold mb-1">
+                <p className="text-xs text-[#D00000] font-semibold mb-1">
                   {faq.category}
                 </p>
                 <h3 className="font-medium text-lg">
@@ -116,7 +116,7 @@ export default function FAQPage() {
                 </h3>
               </div>
 
-              <span className="text-[#3772FF] text-xl">
+              <span className="text-[#D00000] text-xl">
                 {activeIndex === index ? "-" : "+"}
               </span>
             </div>

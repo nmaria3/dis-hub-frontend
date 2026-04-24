@@ -60,7 +60,7 @@ export default function Featured() {
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
             >
               {/* COURSE TAG */}
-              <span className="text-[#3772FF] bg-[#3772FF4D] px-3 py-1 text-sm font-bold rounded-sm">
+              <span className="text-[#D00000] bg-[#D000004D] px-3 py-1 text-sm font-bold rounded-sm">
                 {item.course}
               </span>
 

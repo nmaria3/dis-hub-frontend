@@ -244,7 +244,7 @@ const handlePublish = async () => {
         <button
           onClick={handleButtonClick}
           className="px-6 py-2 text-white rounded-md"
-          style={{ backgroundColor: "#3772FF" }}
+          style={{ backgroundColor: "#D00000" }}
         >
           SELECT FILE
         </button>
@@ -293,7 +293,7 @@ const handlePublish = async () => {
           <input
             type="text"
             placeholder="Dissertation Title"
-            className="w-full mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3772FF]"
+            className="w-full mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D00000]"
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
           />
 
@@ -389,7 +389,7 @@ const handlePublish = async () => {
           {/* BUTTON */}
           <button
             onClick={handlePublish}
-            className="w-full bg-[#3772FF] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
+            className="w-full bg-[#D00000] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
           >
             Publish Dissertation
           </button>
@@ -397,7 +397,7 @@ const handlePublish = async () => {
       </div>
 
       {images.length > 0 && (
-        <div className="mt-6 p-4 border rounded border-[#3772FF]">
+        <div className="mt-6 p-4 border rounded border-[#D00000]">
           <h2 className="text-xl font-bold mb-2">Preview</h2>
 
           <p><strong>Title:</strong> {formData.title}</p>

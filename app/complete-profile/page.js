@@ -288,7 +288,7 @@ const inputStyle = {
 const buttonStyle = {
   width: "100%",
   padding: "12px",
-  backgroundColor: "#3772FF",
+  backgroundColor: "#D00000",
   color: "white",
   border: "none",
   borderRadius: "5px",

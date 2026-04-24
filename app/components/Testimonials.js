@@ -48,7 +48,7 @@ export default function Testimonials() {
             >
 
               {/* STARS */}
-              <div className="flex gap-1 text-[#3772FF] mb-4">
+              <div className="flex gap-1 text-[#D00000] mb-4">
                 {[...Array(5)].map((_, i) => (
                   <FontAwesomeIcon key={i} icon={faStar} />
                 ))}

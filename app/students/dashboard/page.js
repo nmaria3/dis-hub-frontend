@@ -90,7 +90,7 @@ export default function StudentDashboard() {
             <p className="text-gray-500 mt-1">Continue your research journey and explore new academic frontiers</p>
           </div>
           <Link href="/browse">
-            <button className="bg-[#3772FF] text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+            <button className="bg-[#D00000] text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-[#D00000]/70 transition-all shadow-lg shadow-blue-200">
               <FontAwesomeIcon icon={faSearch} />
               Start New Search
             </button>
@@ -129,19 +129,19 @@ export default function StudentDashboard() {
           <div className="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-black flex items-center gap-2">
-                <FontAwesomeIcon icon={faClock} className="text-[#3772FF]" /> Recent Downloads
+                <FontAwesomeIcon icon={faClock} className="text-[#D00000]" /> Recent Downloads
               </h2>
-              <Link href="/students/download-history" className="text-[#3772FF] text-sm font-bold hover:underline">View all</Link>
+              <Link href="/students/download-history" className="text-[#D00000] text-sm font-bold hover:underline">View all</Link>
             </div>
             <div className="space-y-4">
               {data.recentDownloads.slice(0, 5).map((dl, i) => (
-                <div key={i} className="flex items-center justify-between p-4 bg-[#EFEFEF]/50 rounded-xl hover:bg-[#EFEFEF] transition-colors border border-transparent hover:border-[#3772FF]/20">
+                <div key={i} className="flex items-center justify-between p-4 bg-[#EFEFEF]/50 rounded-xl hover:bg-[#EFEFEF] transition-colors border border-transparent hover:border-[#D00000]/20">
                   <div className="flex-1">
                     <h4 className="font-bold text-sm line-clamp-1">{dl.title}</h4>
                     <p className="text-[10px] text-gray-400 font-bold uppercase">{dl.author_name} • {dl.course}</p>
                   </div>
                   <div className="text-right ml-4">
-                    <span className="text-xs font-black text-[#3772FF]">{dl.year}</span>
+                    <span className="text-xs font-black text-[#D00000]">{dl.year}</span>
                   </div>
                 </div>
               ))}
@@ -150,10 +150,10 @@ export default function StudentDashboard() {
 
           {/* Personal Stats & Activity */}
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-[#3772FF]">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-[#D00000]">
               <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">Most Downloaded</h3>
               <h4 className="font-bold text-lg leading-tight mb-2">{data.topDissertation.title}</h4>
-              <div className="flex items-end gap-2 text-[#3772FF]">
+              <div className="flex items-end gap-2 text-[#D00000]">
                 <span className="text-3xl font-black">{data.topDissertation.downloads}</span>
                 <span className="text-sm font-bold mb-1 pb-1">downloads ({data.topDissertation.percentage}%)</span>
               </div>
@@ -161,7 +161,7 @@ export default function StudentDashboard() {
 
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                <FontAwesomeIcon icon={faCalendarAlt} className="text-[#3772FF]" /> Activity (Past 7 Days)
+                <FontAwesomeIcon icon={faCalendarAlt} className="text-[#D00000]" /> Activity (Past 7 Days)
               </h3>
               <div className="flex justify-between items-center gap-2">
                 {[...Array(7)].map((_, i) => {
@@ -189,16 +189,16 @@ export default function StudentDashboard() {
                       <div 
                         className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs transition-all duration-300 ${
                           isActive 
-                            ? 'bg-[#3772FF] text-white shadow-lg shadow-blue-100 scale-105' 
+                            ? 'bg-[#D00000] text-white shadow-lg shadow-blue-100 scale-105' 
                             : 'bg-[#EFEFEF] text-gray-400 border border-gray-200'
-                        } ${isToday ? 'ring-2 ring-[#3772FF] ring-offset-2' : ''}`}
+                        } ${isToday ? 'ring-2 ring-[#D00000] ring-offset-2' : ''}`}
                       >
                         {isActive ? '✓' : ''}
                       </div>
                       
                       {/* The Day Label */}
                       <span className={`text-[10px] font-black uppercase tracking-tighter ${
-                        isToday ? 'text-[#3772FF]' : 'text-gray-400'
+                        isToday ? 'text-[#D00000]' : 'text-gray-400'
                       }`}>
                         {isToday ? 'Today' : dayInitial}
                       </span>
@@ -217,15 +217,15 @@ export default function StudentDashboard() {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex justify-between items-center px-2">
               <h2 className="text-xl font-black flex items-center gap-2">
-                <FontAwesomeIcon icon={faBookmark} className="text-[#3772FF]" /> Saved Dissertations
+                <FontAwesomeIcon icon={faBookmark} className="text-[#D00000]" /> Saved Dissertations
               </h2>
-              <Link href="/students/bookmark" className="text-[#3772FF] text-sm font-bold hover:underline">View all</Link>
+              <Link href="/students/bookmark" className="text-[#D00000] text-sm font-bold hover:underline">View all</Link>
             </div>
             {data.recentBookmarks.slice(0, 5).map((bm) => (
               <Link href={`/students/dissertations/${bm.dissertation_id}`} key={bm.dissertation_id}>
-                <div className="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-[#3772FF] transition-all mb-4 block group">
-                  <span className="text-[10px] font-black text-[#3772FF] uppercase">{bm.course}</span>
-                  <h3 className="font-bold text-lg group-hover:text-[#3772FF] transition-colors">{bm.title}</h3>
+                <div className="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-[#D00000] transition-all mb-4 block group">
+                  <span className="text-[10px] font-black text-[#D00000] uppercase">{bm.course}</span>
+                  <h3 className="font-bold text-lg group-hover:text-[#D00000] transition-colors">{bm.title}</h3>
                   <p className="text-sm text-gray-500 line-clamp-2 mt-2 italic">"{bm.abstract}"</p>
                 </div>
               </Link>
@@ -242,7 +242,7 @@ export default function StudentDashboard() {
                 <div key={index} className="flex gap-4 items-start">
                   <span className="text-2xl font-black text-[#EFEFEF] italic">{index + 1}</span>
                   <div>
-                    <h4 className="font-bold text-sm leading-tight hover:text-[#3772FF] cursor-pointer line-clamp-2">{item.title}</h4>
+                    <h4 className="font-bold text-sm leading-tight hover:text-[#D00000] cursor-pointer line-clamp-2">{item.title}</h4>
                     <div className="flex gap-3 mt-1">
                       <span className="text-[10px] font-bold text-gray-400 flex items-center gap-1">
                         <FontAwesomeIcon icon={faEye} /> {item.views}
@@ -267,7 +267,7 @@ export default function StudentDashboard() {
 const StatCard = ({ icon, title, value, subtitle }) => (
   <div className="bg-white p-6 rounded-2xl shadow-sm relative overflow-hidden group">
     <div className="flex justify-between items-start relative z-10">
-      <div className="bg-[#EFEFEF] w-10 h-10 rounded-lg flex items-center justify-center text-[#3772FF] group-hover:bg-[#3772FF] group-hover:text-white transition-colors">
+      <div className="bg-[#EFEFEF] w-10 h-10 rounded-lg flex items-center justify-center text-[#D00000] group-hover:bg-[#D00000] group-hover:text-white transition-colors">
         <FontAwesomeIcon icon={icon} />
       </div>
       <span className="text-[10px] font-black text-gray-400 uppercase tracking-tighter">{subtitle}</span>

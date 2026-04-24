@@ -51,7 +51,7 @@ export default function HowItWorks() {
             >
 
               {/* ICON */}
-              <div className="text-[#3772FF] text-4xl mb-4 flex justify-center gap-2">
+              <div className="text-[#D00000] text-4xl mb-4 flex justify-center gap-2">
                 {Array.isArray(item.icon) ? (
                   item.icon.map((ic, i) => (
                     <FontAwesomeIcon key={i} icon={ic} />

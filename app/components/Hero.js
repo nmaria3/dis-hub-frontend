@@ -10,7 +10,7 @@ export default function Hero() {
           
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-black leading-tight">
             Unlocking Global{" "}
-            <span className="text-[#3772FF]">
+            <span className="text-[#D00000]">
               Academic Excellence
             </span>
           </h1>

@@ -48,7 +48,7 @@ export default function NotificationBell() {
       <div className="relative">
 
         {/* Bell */}
-        <div className="bg-[#3772FF] text-white p-4 rounded-full shadow-lg hover:scale-105 transition">
+        <div className="bg-[#D00000] text-white p-4 rounded-full shadow-lg hover:scale-105 transition">
           🔔
         </div>
 

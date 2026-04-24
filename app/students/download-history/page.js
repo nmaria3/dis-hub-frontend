@@ -52,7 +52,7 @@ export default function DownloadHistory() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#EFEFEF] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#3772FF]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#D00000]"></div>
       </div>
     );
   }
@@ -65,7 +65,7 @@ export default function DownloadHistory() {
         <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <h1 className="text-4xl font-black text-black mb-2 flex items-center gap-3">
-              <FontAwesomeIcon icon={faHistory} className="text-[#3772FF] text-3xl" />
+              <FontAwesomeIcon icon={faHistory} className="text-[#D00000] text-3xl" />
               Download History
             </h1>
             <p className="text-gray-600 max-w-md">
@@ -73,7 +73,7 @@ export default function DownloadHistory() {
             </p>
           </div>
           <div className="bg-white px-6 py-2 rounded-full shadow-sm border border-gray-200 self-start md:self-auto">
-            <span className="text-[#3772FF] font-bold text-lg">{history.length}</span>
+            <span className="text-[#D00000] font-bold text-lg">{history.length}</span>
             <span className="text-gray-500 ml-2 font-medium italic text-sm text-nowrap">items found</span>
           </div>
         </header>
@@ -92,14 +92,14 @@ export default function DownloadHistory() {
             history.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-xl p-5 shadow-sm border border-transparent hover:border-[#3772FF] transition-all group flex flex-col md:flex-row md:items-center justify-between gap-4"
+                className="bg-white rounded-xl p-5 shadow-sm border border-transparent hover:border-[#D00000] transition-all group flex flex-col md:flex-row md:items-center justify-between gap-4"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#EFEFEF] p-4 rounded-lg text-[#3772FF] group-hover:bg-[#3772FF] group-hover:text-white transition-colors">
+                  <div className="bg-[#EFEFEF] p-4 rounded-lg text-[#D00000] group-hover:bg-[#D00000] group-hover:text-white transition-colors">
                     <FontAwesomeIcon icon={faFilePdf} className="text-2xl" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg leading-tight group-hover:text-[#3772FF] transition-colors line-clamp-1">
+                    <h3 className="font-bold text-lg leading-tight group-hover:text-[#D00000] transition-colors line-clamp-1">
                       {item.title}
                     </h3>
                     <p className="text-gray-500 text-sm font-medium uppercase tracking-tight">
@@ -121,7 +121,7 @@ export default function DownloadHistory() {
 
                   <button 
                     onClick={() => handleReDownload(item.file_download_url)}
-                    className="bg-[#3772FF] text-white w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-lg shadow-blue-100"
+                    className="bg-[#D00000] text-white w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-lg shadow-blue-100"
                     title="Download Again"
                   >
                     <FontAwesomeIcon icon={faCloudDownloadAlt} className="text-lg" />

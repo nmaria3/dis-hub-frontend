@@ -76,7 +76,7 @@ export default function AdminAnalytics() {
                 name="startDate"
                 value={dateRange.startDate}
                 onChange={handleInputChange}
-                className="bg-[#EFEFEF] border-none rounded-lg text-sm font-bold p-2 focus:ring-2 focus:ring-[#3772FF] outline-none"
+                className="bg-[#EFEFEF] border-none rounded-lg text-sm font-bold p-2 focus:ring-2 focus:ring-[#D00000] outline-none"
               />
             </div>
             <div className="flex flex-col">
@@ -86,13 +86,13 @@ export default function AdminAnalytics() {
                 name="endDate"
                 value={dateRange.endDate}
                 onChange={handleInputChange}
-                className="bg-[#EFEFEF] border-none rounded-lg text-sm font-bold p-2 focus:ring-2 focus:ring-[#3772FF] outline-none"
+                className="bg-[#EFEFEF] border-none rounded-lg text-sm font-bold p-2 focus:ring-2 focus:ring-[#D00000] outline-none"
               />
             </div>
             <button 
               onClick={fetchAnalytics}
               disabled={loading}
-              className="bg-[#3772FF] text-white self-end px-6 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center gap-2 disabled:opacity-50"
+              className="bg-[#D00000] text-white self-end px-6 py-2.5 rounded-xl font-bold hover:bg-[#D00000]/70 transition-all flex items-center gap-2 disabled:opacity-50"
             >
               {loading ? (
                 <FontAwesomeIcon icon={faCircleNotch} className="animate-spin" />
@@ -117,7 +117,7 @@ export default function AdminAnalytics() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                 <h2 className="text-xl font-black mb-6 flex items-center gap-2">
-                  <FontAwesomeIcon icon={faArrowTrendUp} className="text-[#3772FF]" />
+                  <FontAwesomeIcon icon={faArrowTrendUp} className="text-[#D00000]" />
                   Download Velocity
                 </h2>
                 <div className="h-[300px] w-full">
@@ -125,8 +125,8 @@ export default function AdminAnalytics() {
                     <AreaChart data={data.graphs.downloadsPerDay}>
                       <defs>
                         <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#3772FF" stopOpacity={0.1}/>
-                          <stop offset="95%" stopColor="#3772FF" stopOpacity={0}/>
+                          <stop offset="5%" stopColor="#D00000" stopOpacity={0.1}/>
+                          <stop offset="95%" stopColor="#D00000" stopOpacity={0}/>
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F0F0F0" />
@@ -138,7 +138,7 @@ export default function AdminAnalytics() {
                       />
                       <YAxis hide />
                       <Tooltip />
-                      <Area type="monotone" dataKey="count" stroke="#3772FF" strokeWidth={3} fill="url(#areaGrad)" />
+                      <Area type="monotone" dataKey="count" stroke="#D00000" strokeWidth={3} fill="url(#areaGrad)" />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
@@ -146,7 +146,7 @@ export default function AdminAnalytics() {
 
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                 <h2 className="text-xl font-black mb-6 flex items-center gap-2">
-                  <FontAwesomeIcon icon={faChartBar} className="text-[#3772FF]" />
+                  <FontAwesomeIcon icon={faChartBar} className="text-[#D00000]" />
                   Popular Topics
                 </h2>
                 <div className="space-y-6">
@@ -154,11 +154,11 @@ export default function AdminAnalytics() {
                     <div key={item.id} className="space-y-1">
                       <div className="flex justify-between text-xs font-bold">
                         <span className="truncate pr-4">{item.title}</span>
-                        <span className="text-[#3772FF]">{item.percentage}%</span>
+                        <span className="text-[#D00000]">{item.percentage}%</span>
                       </div>
                       <div className="w-full bg-[#EFEFEF] h-2 rounded-full overflow-hidden">
                         <div 
-                          className="bg-[#3772FF] h-full transition-all duration-700" 
+                          className="bg-[#D00000] h-full transition-all duration-700" 
                           style={{ width: `${item.percentage}%` }}
                         />
                       </div>
@@ -198,16 +198,16 @@ export default function AdminAnalytics() {
                               <Line 
                                 type="stepAfter" 
                                 dataKey="count" 
-                                stroke="#3772FF" 
+                                stroke="#D00000" 
                                 strokeWidth={3} 
-                                dot={{r: 4, fill: '#3772FF'}} 
+                                dot={{r: 4, fill: '#D00000'}} 
                               />
                             </LineChart>
                           </ResponsiveContainer>
                         </div>
                       </td>
                       <td className="px-8 py-6 text-right">
-                        <span className="text-4xl font-black text-[#3772FF]">{data.insights.mostDownloaded.total_downloads}</span>
+                        <span className="text-4xl font-black text-[#D00000]">{data.insights.mostDownloaded.total_downloads}</span>
                       </td>
                     </tr>
                   </tbody>
@@ -229,12 +229,12 @@ export default function AdminAnalytics() {
 };
 
 const AnalyticsCard = ({ icon, label, value }) => (
-  <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex justify-between items-start group hover:border-[#3772FF] transition-all">
+  <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex justify-between items-start group hover:border-[#D00000] transition-all">
     <div>
       <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{label}</p>
       <h3 className="text-4xl font-black mt-1">{value}</h3>
     </div>
-    <div className="w-12 h-12 bg-[#EFEFEF] text-[#3772FF] rounded-2xl flex items-center justify-center text-xl group-hover:bg-[#3772FF] group-hover:text-white transition-all">
+    <div className="w-12 h-12 bg-[#EFEFEF] text-[#D00000] rounded-2xl flex items-center justify-center text-xl group-hover:bg-[#D00000] group-hover:text-white transition-all">
       <FontAwesomeIcon icon={icon} />
     </div>
   </div>

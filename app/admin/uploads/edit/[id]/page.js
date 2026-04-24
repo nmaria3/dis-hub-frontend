@@ -175,7 +175,7 @@ export default function EditDissertation() {
                   setData({ ...data, image_url: img.image_url });
                 }}
                 className={`w-16 h-16 object-cover rounded cursor-pointer border ${
-                  currentImage === i ? "border-[#3772FF]" : ""
+                  currentImage === i ? "border-[#D00000]" : ""
                 }`}
               />
             ))}
@@ -241,7 +241,7 @@ export default function EditDissertation() {
           <button
             type="submit"
             className="py-3 text-white font-semibold rounded"
-            style={{ backgroundColor: "#3772FF" }}
+            style={{ backgroundColor: "#D00000" }}
           >
             Update Dissertation
           </button>
@@ -249,7 +249,7 @@ export default function EditDissertation() {
           <button
             type="button"
             onClick={() => {router.push("/admin/uploads/view")}}
-            className="py-3 text-[#3772FF] border-2 border-[#3772FF] font-semibold rounded"
+            className="py-3 text-[#D00000] border-2 border-[#D00000] font-semibold rounded"
             style={{ backgroundColor: "transparent" }}
           >
             Cancel

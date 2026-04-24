@@ -199,7 +199,7 @@ export default function DissertationViewPage() {
             </h1>
             <div className="mt-4 flex flex-wrap gap-4 text-gray-600 font-medium">
               <span>By {dissertation.author_name}</span>
-              <span className="text-[#3772FF]">•</span>
+              <span className="text-[#D00000]">•</span>
               <span>Year of Publishing: {dissertation.year}</span>
             </div>
           </section>
@@ -220,8 +220,8 @@ export default function DissertationViewPage() {
               { label: 'DOWNLOADS', value: stats?.downloads, icon: faDownload },
               { label: 'BOOKMARKS', value: stats?.bookmarks, icon: faBookmark },
             ].map((stat, i) => (
-              <div key={i} className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center border-b-4 border-[#3772FF]">
-                <FontAwesomeIcon icon={stat.icon} className="text-[#3772FF] text-xl mb-2" />
+              <div key={i} className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center border-b-4 border-[#D00000]">
+                <FontAwesomeIcon icon={stat.icon} className="text-[#D00000] text-xl mb-2" />
                 <span className="text-2xl font-bold">{stat.value || 0}</span>
                 <span className="text-[10px] font-bold text-gray-400 tracking-widest">{stat.label}</span>
               </div>
@@ -231,15 +231,15 @@ export default function DissertationViewPage() {
           {/* Abstract */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <FontAwesomeIcon icon={faInfoCircle} className="text-[#3772FF]" /> Abstract
+              <FontAwesomeIcon icon={faInfoCircle} className="text-[#D00000]" /> Abstract
             </h2>
             <p className="text-gray-700 leading-relaxed text-justify">{dissertation.abstract}</p>
           </div>
 
           {/* Methodology */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#3772FF]">
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#D00000]">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <FontAwesomeIcon icon={faFlask} className="text-[#3772FF]" /> Research Methodology
+              <FontAwesomeIcon icon={faFlask} className="text-[#D00000]" /> Research Methodology
             </h2>
             <p className="text-gray-700 italic">{dissertation.methodology}</p>
           </div>
@@ -247,12 +247,12 @@ export default function DissertationViewPage() {
           {/* Citations */}
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <FontAwesomeIcon icon={faQuoteRight} className="text-[#3772FF]" /> Citations
+              <FontAwesomeIcon icon={faQuoteRight} className="text-[#D00000]" /> Citations
             </h2>
             <div className="space-y-4">
               {['apa', 'mla', 'harvard'].map((format) => (
                 <div key={format} className="p-3 bg-gray-50 rounded border border-gray-200">
-                  <span className="text-[10px] font-black text-[#3772FF] uppercase">{format}</span>
+                  <span className="text-[10px] font-black text-[#D00000] uppercase">{format}</span>
                   <p className="text-sm mt-1 text-gray-600">{citationData[format]}</p>
                 </div>
               ))}
@@ -273,12 +273,12 @@ export default function DissertationViewPage() {
           <div className="bg-white p-6 rounded-2xl shadow-xl sticky top-8">
             <div className="space-y-3 mb-6">
               {/* Inverted Button (Outline) */}
-              <button onClick={() => handleViewPDF(dissertation.file_url)} className="w-full py-3 border-2 border-[#3772FF] text-[#3772FF] rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-blue-50 transition-all">
+              <button onClick={() => handleViewPDF(dissertation.file_url)} className="w-full py-3 border-2 border-[#D00000] text-[#D00000] rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-blue-50 transition-all">
                 <FontAwesomeIcon icon={faFilePdf} /> View Full PDF
               </button>
               
               {/* Primary Button */}
-              <button onClick={() => handleDownloadPDF(dissertation.id, dissertation.file_download_url)}  className="w-full py-3 bg-[#3772FF] text-white rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all">
+              <button onClick={() => handleDownloadPDF(dissertation.id, dissertation.file_download_url)}  className="w-full py-3 bg-[#D00000] text-white rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-[#D00000]/70 shadow-lg shadow-blue-200 transition-all">
                 <FontAwesomeIcon icon={faDownload} /> Download PDF
               </button>
 

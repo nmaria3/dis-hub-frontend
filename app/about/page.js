@@ -26,12 +26,12 @@ export default function AboutPage() {
     <section className="bg-[#EFEFEF] text-black">
 
       {/* ================= HERO SECTION ================= */}
-      <div className="bg-[#3772FF]/20 py-12 px-4 md:px-10">
+      <div className="bg-[#D00000]/20 py-12 px-4 md:px-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
           {/* LEFT */}
           <div className="flex-1">
-            <span className="inline-block px-3 py-1 text-sm rounded-md bg-[#3772FF]/35 text-[#3772FF] mb-4">
+            <span className="inline-block px-3 py-1 text-sm rounded-md bg-[#D00000]/35 text-[#D00000] mb-4">
               Our Mission
             </span>
 
@@ -93,14 +93,14 @@ export default function AboutPage() {
             {/* STATS */}
             <div className="flex gap-4">
               <div className="flex-1 p-4 rounded-lg text-center bg-white shadow">
-                <span className="block text-2xl font-bold text-[#3772FF]">
+                <span className="block text-2xl font-bold text-[#D00000]">
                   50k+
                 </span>
                 <p className="text-sm text-gray-600">DISSERTATIONS</p>
               </div>
 
               <div className="flex-1 p-4 rounded-lg text-center bg-white shadow">
-                <span className="block text-2xl font-bold text-[#3772FF]">
+                <span className="block text-2xl font-bold text-[#D00000]">
                   100+
                 </span>
                 <p className="text-sm text-gray-600">PARTNERS</p>
@@ -122,7 +122,7 @@ export default function AboutPage() {
             {campuses.map((campus) => (
               <div
                 key={campus.id}
-                className="p-6 rounded-xl text-center bg-white shadow transition-all duration-300 hover:bg-[#3772FF] hover:text-white hover:scale-105 cursor-pointer"
+                className="p-6 rounded-xl text-center bg-white shadow transition-all duration-300 hover:bg-[#D00000] hover:text-white hover:scale-105 cursor-pointer"
               >
                 <h3 className="text-lg font-semibold">
                   {campus.name}
@@ -165,12 +165,12 @@ export default function AboutPage() {
             </p>
 
             <div>
-                <p className="font-semibold text-[#3772FF]">— Maria Nankinga</p>
+                <p className="font-semibold text-[#D00000]">— Maria Nankinga</p>
                 <p className="text-sm text-gray-500">Chief Executive Officer, Dis-Hub</p>
             </div>
 
             {/* subtle accent line */}
-            <div className="mt-4 w-16 h-1 bg-[#3772FF]"></div>
+            <div className="mt-4 w-16 h-1 bg-[#D00000]"></div>
             </div>
 
         </div>

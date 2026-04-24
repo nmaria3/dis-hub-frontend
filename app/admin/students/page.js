@@ -167,14 +167,14 @@ export default function StudentsDirectory() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="bg-white p-6 rounded-xl shadow">
             <h3 className="text-gray-600">Total number of students</h3>
-            <p className="text-4xl font-bold text-[#3772FF] mt-2">
+            <p className="text-4xl font-bold text-[#D00000] mt-2">
               {count}
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow">
             <h3 className="text-gray-600">Active</h3>
-            <p className="text-4xl font-bold text-[#3772FF] mt-2">
+            <p className="text-4xl font-bold text-[#D00000] mt-2">
               {active}
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function StudentsDirectory() {
           <input
             type="text"
             placeholder="Search by name, campus, course..."
-            className="p-3 border rounded-lg focus:ring-2 focus:ring-[#3772FF]"
+            className="p-3 border rounded-lg focus:ring-2 focus:ring-[#D00000]"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -289,7 +289,7 @@ export default function StudentsDirectory() {
                 <button
                   onClick={() => handleDisable(u.id)}
                   className="flex-1 text-white py-2 rounded"
-                  style={{ backgroundColor: "#3772FF" }}
+                  style={{ backgroundColor: "#000" }}
                 >
                   Disable
                 </button>

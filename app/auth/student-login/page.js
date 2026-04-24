@@ -99,7 +99,7 @@ export default function StudentLogin() {
       <div className="text-center">
         <div
           className="w-16 h-16 border-4 border-t-transparent rounded-full animate-spin mx-auto"
-          style={{ borderColor: "#3772FF", borderTopColor: "transparent" }}
+          style={{ borderColor: "#D00000", borderTopColor: "transparent" }}
         ></div>
 
         <p className="mt-4 text-black font-semibold">

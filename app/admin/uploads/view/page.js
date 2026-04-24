@@ -252,7 +252,7 @@ export default function ManageDissertations() {
                 <button
                   onClick={() => handleEdit(item)}
                   className="flex-1 py-2 rounded-lg text-white text-sm font-semibold"
-                  style={{ backgroundColor: "#3772FF" }}
+                  style={{ backgroundColor: "#D00000" }}
                 >
                   ✏️ Edit
                 </button>
@@ -261,8 +261,8 @@ export default function ManageDissertations() {
                   onClick={() => handleDelete(item.id, item.title)}
                   className="flex-1 py-2 rounded-lg border text-sm font-semibold"
                   style={{
-                    borderColor: "#3772FF",
-                    color: "#3772FF",
+                    borderColor: "#D00000",
+                    color: "#D00000",
                   }}
                 >
                   🗑️ Delete

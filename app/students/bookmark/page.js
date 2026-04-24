@@ -49,7 +49,7 @@ import { useAuth } from '@clerk/nextjs';
 
   if (loading) return (
     <div className="min-h-screen bg-[#EFEFEF] flex items-center justify-center">
-      <div className="h-10 w-10 border-4 border-[#3772FF] border-t-transparent rounded-full animate-spin"></div>
+      <div className="h-10 w-10 border-4 border-[#D00000] border-t-transparent rounded-full animate-spin"></div>
     </div>
   );
 
@@ -61,7 +61,7 @@ import { useAuth } from '@clerk/nextjs';
         <header className="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <h1 className="text-4xl font-black flex items-center gap-3">
-              <FontAwesomeIcon icon={faBookmark} className="text-[#3772FF]" />
+              <FontAwesomeIcon icon={faBookmark} className="text-[#D00000]" />
               Saved Dissertations
             </h1>
             <p className="text-gray-600 font-medium">
@@ -69,8 +69,8 @@ import { useAuth } from '@clerk/nextjs';
             </p>
           </div>
           
-          <div className="bg-white border-2 border-[#3772FF] px-6 py-2 rounded-xl self-start">
-            <span className="text-2xl font-black text-[#3772FF]">{bookmarks.length}</span>
+          <div className="bg-white border-2 border-[#D00000] px-6 py-2 rounded-xl self-start">
+            <span className="text-2xl font-black text-[#D00000]">{bookmarks.length}</span>
             <span className="ml-2 font-bold text-sm uppercase tracking-tighter">Items Saved</span>
           </div>
         </header>
@@ -98,7 +98,7 @@ import { useAuth } from '@clerk/nextjs';
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4">
                   <div className="flex items-center gap-2 text-white">
-                    <FontAwesomeIcon icon={faGraduationCap} className="text-[#3772FF]" />
+                    <FontAwesomeIcon icon={faGraduationCap} className="text-[#D00000]" />
                     <span className="text-xs font-bold uppercase tracking-wide">{item.course}</span>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ import { useAuth } from '@clerk/nextjs';
               <div className="flex-1 p-6 md:p-8 flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-2">
-                    <h2 className="text-xl md:text-2xl font-black leading-tight group-hover:text-[#3772FF] transition-colors">
+                    <h2 className="text-xl md:text-2xl font-black leading-tight group-hover:text-[#D00000] transition-colors">
                       {item.title}
                     </h2>
                   </div>
@@ -127,7 +127,7 @@ import { useAuth } from '@clerk/nextjs';
                 <div className="mt-8 flex flex-wrap gap-3">
                   <button 
                     onClick={() => handleView(item.dissertation_id)}
-                    className="bg-[#3772FF] text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100"
+                    className="bg-[#D00000] text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 transition-colors shadow-lg shadow-blue-100 cursor-pointer hover:bg-[#D00000]/70"
                   >
                     View Dissertation
                     <FontAwesomeIcon icon={faArrowRight} className="text-xs" />
@@ -137,7 +137,7 @@ import { useAuth } from '@clerk/nextjs';
                     onClick={() => window.open(item.file_download_url, '_blank')}
                     className="bg-[#EFEFEF] text-black px-6 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-gray-200 transition-colors"
                   >
-                    <FontAwesomeIcon icon={faDownload} className="text-[#3772FF]" />
+                    <FontAwesomeIcon icon={faDownload} className="text-[#D00000]" />
                     Download
                   </button>
                 </div>
