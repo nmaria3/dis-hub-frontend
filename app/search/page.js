@@ -39,28 +39,48 @@ export default function BrowsePage() {
   }, []);
 
   // Filter and Sort Logic
-  useEffect(() => {
-    let updatedList = dissertations.filter((item) => {
-      const matchesSearch = 
-        item.title.toLowerCase().includes(search.toLowerCase()) ||
-        item.author_name.toLowerCase().includes(search.toLowerCase());
-      
-      const matchesYear = filters.year ? item.year.toString() === filters.year : true;
-      const matchesCampus = filters.campus ? item.academic.campus.name === filters.campus : true;
-      const matchesFaculty = filters.faculty ? item.academic.faculty.name === filters.faculty : true;
-      const matchesCourse = filters.course ? item.academic.course?.name === filters.course : true;
+useEffect(() => {
+  const searchText = search.toLowerCase();
 
-      return matchesSearch && matchesYear && matchesCampus && matchesFaculty && matchesCourse;
-    });
+  let updatedList = dissertations.filter((item) => {
+    const title = item?.title ?? "";
+    const author = item?.author_name ?? "";
+    const year = item?.year != null ? item.year.toString() : "";
+    const campus = item?.academic?.campus?.name ?? "";
+    const faculty = item?.academic?.faculty?.name ?? "";
+    const course = item?.academic?.course?.name ?? "";
 
-    // Sorting
-    updatedList.sort((a, b) => {
-      if (sortBy === "year") return b.year - a.year;
-      return a[sortBy]?.localeCompare(b[sortBy]);
-    });
+    const matchesSearch =
+      title.toLowerCase().includes(searchText) ||
+      author.toLowerCase().includes(searchText);
 
-    setFilteredData(updatedList);
-  }, [search, filters, sortBy, dissertations]);
+    const matchesYear = filters.year ? year === filters.year : true;
+    const matchesCampus = filters.campus ? campus === filters.campus : true;
+    const matchesFaculty = filters.faculty ? faculty === filters.faculty : true;
+    const matchesCourse = filters.course ? course === filters.course : true;
+
+    return (
+      matchesSearch &&
+      matchesYear &&
+      matchesCampus &&
+      matchesFaculty &&
+      matchesCourse
+    );
+  });
+
+  updatedList.sort((a, b) => {
+    if (sortBy === "year") {
+      return Number(b?.year ?? 0) - Number(a?.year ?? 0);
+    }
+
+    const valueA = String(a?.[sortBy] ?? "");
+    const valueB = String(b?.[sortBy] ?? "");
+
+    return valueA.localeCompare(valueB);
+  });
+
+  setFilteredData(updatedList);
+}, [search, filters, sortBy, dissertations]);
 
   const handleView = (id) => {
     console.log("Viewing Dissertation ID:", id);

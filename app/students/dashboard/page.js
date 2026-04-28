@@ -89,7 +89,7 @@ export default function StudentDashboard() {
             <h1 className="text-3xl md:text-4xl font-black">Welcome back, {user?.firstName || "Student"}😄👋</h1>
             <p className="text-gray-500 mt-1">Continue your research journey and explore new academic frontiers</p>
           </div>
-          <Link href="/browse">
+          <Link href="/search">
             <button className="bg-[#D00000] text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-[#D00000]/70 transition-all shadow-lg shadow-blue-200">
               <FontAwesomeIcon icon={faSearch} />
               Start New Search
